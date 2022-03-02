@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Formulario de Prueba</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+    </style>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <div class="padding-bottom content-main">
+        <h1 class="page-title ng-binding ng-scope" translate="patientPortal.navigationBar.title">Reserva de hora</h1>
+        <div class="content-main is-stepper">
+            <!-- ngIf: $ctrl.currentState !== $ctrl.NO_LOGIN_BOOK_SUCCESS_STATE && !$ctrl.slotHour -->
+            <div ng-if="$ctrl.currentState !== $ctrl.NO_LOGIN_BOOK_SUCCESS_STATE &amp;&amp; !$ctrl.slotHour" class="ng-scope">
+                <div class="content-main-header">
+                    <div class="step-number">4</div>
+                    <h2 class="title ng-binding"><span translate="patientPortal.step" class="ng-scope">Paso</span> 4: <span translate="patientPortal.noLoginBook.selectDayAndTime" class="ng-scope">Seleccionar día y
+                            hora</span></h2>
+                </div>
+                <div class="content-main-step active">
+                    <div class="step-table">
+                        <div class="step-number-cell">
+                            <div class="step-number">4</div>
+                        </div>
+                        <h2 class="title ng-binding"><span translate="patientPortal.step" class="ng-scope">Paso</span> 4:
+                            <span translate="patientPortal.noLoginBook.selectDayAndTime" class="ng-scope">Seleccionar día y
+                                hora</span></h2>
+                    </div>
+                </div>
+                <div class="steps-container">
+                    <!-- ngInclude: 'app/appPatientPortal/components/svgImageTemplates/fourthWizardStep.html' -->
+                    <div class="steps ng-scope" ng-include="'app/appPatientPortal/components/svgImageTemplates/fourthWizardStep.html'"><span class="done ng-scope"><strong>1</strong><svg height="8px" viewBox="0 -46 417.81333 417"
+                                width="8px">
+                                <path
+                                    d="m159.988281 318.582031c-3.988281 4.011719-9.429687 6.25-15.082031 6.25s-11.09375-2.238281-15.082031-6.25l-120.449219-120.46875c-12.5-12.5-12.5-32.769531 0-45.246093l15.082031-15.085938c12.503907-12.5 32.75-12.5 45.25 0l75.199219 75.203125 203.199219-203.203125c12.503906-12.5 32.769531-12.5 45.25 0l15.082031 15.085938c12.5 12.5 12.5 32.765624 0 45.246093zm0 0">
+                                </path>
+                            </svg></span> <span class="done ng-scope"><strong>2</strong><svg height="8px"
+                                viewBox="0 -46 417.81333 417" width="8px">
+                                <path
+                                    d="m159.988281 318.582031c-3.988281 4.011719-9.429687 6.25-15.082031 6.25s-11.09375-2.238281-15.082031-6.25l-120.449219-120.46875c-12.5-12.5-12.5-32.769531 0-45.246093l15.082031-15.085938c12.503907-12.5 32.75-12.5 45.25 0l75.199219 75.203125 203.199219-203.203125c12.503906-12.5 32.769531-12.5 45.25 0l15.082031 15.085938c12.5 12.5 12.5 32.765624 0 45.246093zm0 0">
+                                </path>
+                            </svg></span> <span class="done ng-scope"><strong>3</strong><svg height="8px"
+                                viewBox="0 -46 417.81333 417" width="8px">
+                                <path
+                                    d="m159.988281 318.582031c-3.988281 4.011719-9.429687 6.25-15.082031 6.25s-11.09375-2.238281-15.082031-6.25l-120.449219-120.46875c-12.5-12.5-12.5-32.769531 0-45.246093l15.082031-15.085938c12.503907-12.5 32.75-12.5 45.25 0l75.199219 75.203125 203.199219-203.203125c12.503906-12.5 32.769531-12.5 45.25 0l15.082031 15.085938c12.5 12.5 12.5 32.765624 0 45.246093zm0 0">
+                                </path>
+                            </svg></span> <span class="current ng-scope"><strong>4</strong><svg height="8px"
+                                viewBox="0 -46 417.81333 417" width="8px">
+                                <path
+                                    d="m159.988281 318.582031c-3.988281 4.011719-9.429687 6.25-15.082031 6.25s-11.09375-2.238281-15.082031-6.25l-120.449219-120.46875c-12.5-12.5-12.5-32.769531 0-45.246093l15.082031-15.085938c12.503907-12.5 32.75-12.5 45.25 0l75.199219 75.203125 203.199219-203.203125c12.503906-12.5 32.769531-12.5 45.25 0l15.082031 15.085938c12.5 12.5 12.5 32.765624 0 45.246093zm0 0">
+                                </path>
+                            </svg></span> <span class="ng-scope"><strong>5</strong><svg height="8px"
+                                viewBox="0 -46 417.81333 417" width="8px">
+                                <path
+                                    d="m159.988281 318.582031c-3.988281 4.011719-9.429687 6.25-15.082031 6.25s-11.09375-2.238281-15.082031-6.25l-120.449219-120.46875c-12.5-12.5-12.5-32.769531 0-45.246093l15.082031-15.085938c12.503907-12.5 32.75-12.5 45.25 0l75.199219 75.203125 203.199219-203.203125c12.503906-12.5 32.769531-12.5 45.25 0l15.082031 15.085938c12.5 12.5 12.5 32.765624 0 45.246093zm0 0">
+                                </path>
+                            </svg></span></div>
+                </div>
+            </div>
+            <!-- end ngIf: $ctrl.currentState !== $ctrl.NO_LOGIN_BOOK_SUCCESS_STATE && !$ctrl.slotHour -->
+            <!-- ngIf: $ctrl.currentState !== $ctrl.NO_LOGIN_BOOK_SUCCESS_STATE && $ctrl.slotHour -->
+            <!-- ngIf: $ctrl.currentState === $ctrl.NO_LOGIN_BOOK_SUCCESS_STATE -->
+            <form class="ng-pristine ng-valid">
+                <div class="content-main-body">
+                    <div class="searchContext row mx-0">
+                        <div class="col-xs-12 col-sm-6 area-speciality-region ng-binding">Área Médica - ACUPUNTURA <span class="ng-binding">Región Metropolitana</span></div>
+                        <!-- ngIf: $ctrl.currentState === $ctrl.SLOTS_RESULTS_STATE -->
+                        <div ng-if="$ctrl.currentState === $ctrl.SLOTS_RESULTS_STATE" class="col-xs-12 col-sm-6 back-btn-wrap right ng-scope">
+                            <!-- ngIf: !$ctrl.showBackButton --><a class="back-link right ng-scope" ng-click="$ctrl.onBackPressed()" ng-if="!$ctrl.showBackButton"><span class="ng-binding">&lt;
+                                    VOLVER A BUSCAR</span></a>
+                            <!-- end ngIf: !$ctrl.showBackButton -->
+                            <!-- ngIf: $ctrl.showBackButton -->
+                            <div class="clear"></div>
+                        </div>
+                        <!-- end ngIf: $ctrl.currentState === $ctrl.SLOTS_RESULTS_STATE -->
+                    </div>
+                    <!-- uiView: -->
+                    <div ui-view="" class="ng-scope">
+                        <slots-results class="ng-scope ng-isolate-scope">
+                            <div class="doctor-block-wrapper">
+                                <div class="sticky">
+                                    <div class="transparent-slots-header"></div>
+                                    <div class="row" ng-class="{'is-mobile': $ctrl.isMobileDevice}">
+                                        <div class="date-of-week col-xs-1"><span class="arrow-left custom-arrow active-arrow" ng-click="$ctrl.goToNextOrPrevious($ctrl.PREVIOUS)" ng-class="$ctrl.isPreviousButtonEnable ? 'active-arrow' : 'inactive-arrow'" role="button" tabindex="0" style=""><i
+                                                    class="fa fa-angle-left fa-3x"></i></span></div>
+                                        <div class="col-xs-10">
+                                            <div ng-class="{'scrollable-view': $ctrl.isMobileDevice}" id="scrollableContainer">
+                                                <table class="week-view">
+                                                    <tbody>
+                                                        <tr class="date-of-week">
+                                                            <!-- ngRepeat: resource in $ctrl.slotsPerWeek -->
+                                                            <td ng-repeat="resource in $ctrl.slotsPerWeek" id="cardContainer" class="ng-scope" style="">
+                                                                <div ng-class="$ctrl.setCSSClass(resource)" class="time-slots label-no-slots">
+                                                                    <div ng-click="$ctrl.onSelectedDay(resource)" ng-class="{'disable-day': resource.slots.length === 0}" class="day disable-day" role="button" tabindex="0">
+                                                                        <div class="date-container">
+                                                                            <div class="date day-of-month ng-binding">mar.
+                                                                            </div>
+                                                                            <div class="date date-of-day ng-binding">02
+                                                                            </div>
+                                                                            <div class="date day-of-week ng-binding">
+                                                                                miércoles</div>
+                                                                        </div>
+                                                                        <!-- ngIf: resource.slots.length === 0 -->
+                                                                        <div class="available-hours ng-scope" ng-if="resource.slots.length === 0" translate="label.noAvailableHour">Sin hora disponible
+                                                                        </div>
+                                                                        <!-- end ngIf: resource.slots.length === 0 -->
+                                                                        <!-- ngIf: resource.slots.length > 0 && !$ctrl.areSlotsPerDay(resource) -->
+                                                                        <!-- ngIf: resource.slots.length > 0 && $ctrl.areSlotsPerDay(resource) -->
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <!-- end ngRepeat: resource in $ctrl.slotsPerWeek -->
+                                                            <td ng-repeat="resource in $ctrl.slotsPerWeek" id="cardContainer" class="ng-scope">
+                                                                <div ng-class="$ctrl.setCSSClass(resource)" class="time-slots label-no-slots">
+                                                                    <div ng-click="$ctrl.onSelectedDay(resource)" ng-class="{'disable-day': resource.slots.length === 0}" class="day disable-day" role="button" tabindex="0">
+                                                                        <div class="date-container">
+                                                                            <div class="date day-of-month ng-binding">mar.
+                                                                            </div>
+                                                                            <div class="date date-of-day ng-binding">03
+                                                                            </div>
+                                                                            <div class="date day-of-week ng-binding">jueves
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- ngIf: resource.slots.length === 0 -->
+                                                                        <div class="available-hours ng-scope" ng-if="resource.slots.length === 0" translate="label.noAvailableHour">Sin hora disponible
+                                                                        </div>
+                                                                        <!-- end ngIf: resource.slots.length === 0 -->
+                                                                        <!-- ngIf: resource.slots.length > 0 && !$ctrl.areSlotsPerDay(resource) -->
+                                                                        <!-- ngIf: resource.slots.length > 0 && $ctrl.areSlotsPerDay(resource) -->
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <!-- end ngRepeat: resource in $ctrl.slotsPerWeek -->
+                                                            <td ng-repeat="resource in $ctrl.slotsPerWeek" id="cardContainer" class="ng-scope">
+                                                                <div ng-class="$ctrl.setCSSClass(resource)" class="time-slots label-no-slots">
+                                                                    <div ng-click="$ctrl.onSelectedDay(resource)" ng-class="{'disable-day': resource.slots.length === 0}" class="day disable-day" role="button" tabindex="0">
+                                                                        <div class="date-container">
+                                                                            <div class="date day-of-month ng-binding">mar.
+                                                                            </div>
+                                                                            <div class="date date-of-day ng-binding">04
+                                                                            </div>
+                                                                            <div class="date day-of-week ng-binding">viernes
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- ngIf: resource.slots.length === 0 -->
+                                                                        <div class="available-hours ng-scope" ng-if="resource.slots.length === 0" translate="label.noAvailableHour">Sin hora disponible
+                                                                        </div>
+                                                                        <!-- end ngIf: resource.slots.length === 0 -->
+                                                                        <!-- ngIf: resource.slots.length > 0 && !$ctrl.areSlotsPerDay(resource) -->
+                                                                        <!-- ngIf: resource.slots.length > 0 && $ctrl.areSlotsPerDay(resource) -->
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <!-- end ngRepeat: resource in $ctrl.slotsPerWeek -->
+                                                            <td ng-repeat="resource in $ctrl.slotsPerWeek" id="cardContainer" class="ng-scope">
+                                                                <div ng-class="$ctrl.setCSSClass(resource)" class="time-slots label-no-slots">
+                                                                    <div ng-click="$ctrl.onSelectedDay(resource)" ng-class="{'disable-day': resource.slots.length === 0}" class="day disable-day" role="button" tabindex="0">
+                                                                        <div class="date-container">
+                                                                            <div class="date day-of-month ng-binding">mar.
+                                                                            </div>
+                                                                            <div class="date date-of-day ng-binding">05
+                                                                            </div>
+                                                                            <div class="date day-of-week ng-binding">sábado
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- ngIf: resource.slots.length === 0 -->
+                                                                        <div class="available-hours ng-scope" ng-if="resource.slots.length === 0" translate="label.noAvailableHour">Sin hora disponible
+                                                                        </div>
+                                                                        <!-- end ngIf: resource.slots.length === 0 -->
+                                                                        <!-- ngIf: resource.slots.length > 0 && !$ctrl.areSlotsPerDay(resource) -->
+                                                                        <!-- ngIf: resource.slots.length > 0 && $ctrl.areSlotsPerDay(resource) -->
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <!-- end ngRepeat: resource in $ctrl.slotsPerWeek -->
+                                                            <td ng-repeat="resource in $ctrl.slotsPerWeek" id="cardContainer" class="ng-scope">
+                                                                <div ng-class="$ctrl.setCSSClass(resource)" class="time-slots label-no-slots">
+                                                                    <div ng-click="$ctrl.onSelectedDay(resource)" ng-class="{'disable-day': resource.slots.length === 0}" class="day disable-day" role="button" tabindex="0">
+                                                                        <div class="date-container">
+                                                                            <div class="date day-of-month ng-binding">mar.
+                                                                            </div>
+                                                                            <div class="date date-of-day ng-binding">06
+                                                                            </div>
+                                                                            <div class="date day-of-week ng-binding">domingo
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- ngIf: resource.slots.length === 0 -->
+                                                                        <div class="available-hours ng-scope" ng-if="resource.slots.length === 0" translate="label.noAvailableHour">Sin hora disponible
+                                                                        </div>
+                                                                        <!-- end ngIf: resource.slots.length === 0 -->
+                                                                        <!-- ngIf: resource.slots.length > 0 && !$ctrl.areSlotsPerDay(resource) -->
+                                                                        <!-- ngIf: resource.slots.length > 0 && $ctrl.areSlotsPerDay(resource) -->
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <!-- end ngRepeat: resource in $ctrl.slotsPerWeek -->
+                                                            <td ng-repeat="resource in $ctrl.slotsPerWeek" id="cardContainer" class="ng-scope">
+                                                                <div ng-class="$ctrl.setCSSClass(resource)" class="time-slots label-no-slots">
+                                                                    <div ng-click="$ctrl.onSelectedDay(resource)" ng-class="{'disable-day': resource.slots.length === 0}" class="day disable-day" role="button" tabindex="0">
+                                                                        <div class="date-container">
+                                                                            <div class="date day-of-month ng-binding">mar.
+                                                                            </div>
+                                                                            <div class="date date-of-day ng-binding">07
+                                                                            </div>
+                                                                            <div class="date day-of-week ng-binding">lunes
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- ngIf: resource.slots.length === 0 -->
+                                                                        <div class="available-hours ng-scope" ng-if="resource.slots.length === 0" translate="label.noAvailableHour">Sin hora disponible
+                                                                        </div>
+                                                                        <!-- end ngIf: resource.slots.length === 0 -->
+                                                                        <!-- ngIf: resource.slots.length > 0 && !$ctrl.areSlotsPerDay(resource) -->
+                                                                        <!-- ngIf: resource.slots.length > 0 && $ctrl.areSlotsPerDay(resource) -->
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <!-- end ngRepeat: resource in $ctrl.slotsPerWeek -->
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="date-of-week col-xs-1"><span class="arrow-right custom-arrow active-arrow" ng-click="$ctrl.goToNextOrPrevious($ctrl.NEXT)" ng-class="$ctrl.isNextButtonEnable ? 'active-arrow' : 'inactive-arrow'" role="button" tabindex="0"><i class="fa fa-angle-right fa-3x"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ngRepeat: slotsForCenter in $ctrl.slotsForSelectedCenter -->
+                                <!-- ngIf: $ctrl.slotsForSelectedCenter.length === 0 -->
+                                <div class="horas-list horas-empty-container ng-scope" ng-if="$ctrl.slotsForSelectedCenter.length === 0" style=""><label class="horas-empty-item ng-scope no-other-centers" ng-class="$ctrl.slotsForOtherCenters.length > 0 ? 'has-other-centers' : 'no-other-centers'" translate="patientPortal.slots.noAvailableSlots">No hay citas disponibles en este
+                                        día en este centro</label></div>
+                                <!-- end ngIf: $ctrl.slotsForSelectedCenter.length === 0 -->
+                                <!-- ngIf: $ctrl.slotsForOtherCenters.length > 0 -->
+                                <!-- ngRepeat: slotsForCenter in $ctrl.slotsForOtherCenters -->
+                            </div>
+                        </slots-results>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
