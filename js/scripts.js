@@ -40,8 +40,8 @@ $(function() {
 
     // Comportamientos pasos
     switch (url) {
-        case '/index.html':
-        case '/index.html#':
+        case 'index.html':
+        case 'index.html#':
             $("#progreso").addClass("progreso");
             $("#p2").addClass("paso-off");
             $("#p3").addClass("paso-off");
@@ -49,9 +49,9 @@ $(function() {
             $("#p5").addClass("paso-off");
             $("#p1").html("1");
             break
-        case '/paso2.html?select=cdi':
-        case '/paso2.html?select=pspt':
-        case '/paso2.html':
+        case 'paso2.html?select=cdi':
+        case 'paso2.html?select=pspt':
+        case 'paso2.html':
             $("#progreso").addClass("progreso-2");
             $("#p1").html("✓");
             $("#p1").addClass("paso-ok");
@@ -60,7 +60,7 @@ $(function() {
             $("#p5").addClass("paso-off");
             $("#p2").html("2");
             break
-        case '/paso3.html':
+        case 'paso3.html':
             $("#progreso").addClass("progreso-3");
             $("#p1").html("✓");
             $("#p1").addClass("paso-ok");
@@ -98,8 +98,8 @@ $(function() {
 
 
     switch (url) {
-        case '/index.html':
-        case '/index.html#':
+        case 'index.html':
+        case 'index.html#':
         case '/paso2.html?select=cdi':
         case '/paso2.html?select=pspt':
         case '/paso2.html':
