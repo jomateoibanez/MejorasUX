@@ -116,60 +116,6 @@ $(function() {
             break;
     };
 
-    var FRUIT_GROUPS = [{
-            id: '',
-            text: 'Citrus',
-            children: [
-                { id: 'c1', text: 'Grapefruit' },
-                { id: 'c2', text: 'Orange' },
-                { id: 'c3', text: 'Lemon' },
-                { id: 'c4', text: 'Lime' }
-            ]
-        },
-        {
-            id: '',
-            text: 'Other',
-            children: [
-                { id: 'o1', text: 'Apple' },
-                { id: 'o2', text: 'Mango' },
-                { id: 'o3', text: 'Banana' }
-            ]
-        }
-    ];
-
-    $('#fruitSelect').select2({
-        multiple: true,
-        placeholder: "Select fruits...",
-        data: FRUIT_GROUPS,
-        query: function(options) {
-            var selectedIds = options.element.select2('val');
-            var selectableGroups = $.map(this.data, function(group) {
-                var areChildrenAllSelected = true;
-                $.each(group.children, function(i, child) {
-                    if (selectedIds.indexOf(child.id) < 0) {
-                        areChildrenAllSelected = false;
-                        return false; // Short-circuit $.each()
-                    }
-                });
-                return !areChildrenAllSelected ? group : null;
-            });
-            options.callback({ results: selectableGroups });
-        }
-    }).on('select2-selecting', function(e) {
-        var $select = $(this);
-        if (e.val == '') {
-            e.preventDefault();
-            $select.select2('data', $select.select2('data').concat(e.choice.children));
-            $select.select2('close');
-        }
-    });
-
-    $('#showValue').click(function() {
-        $('#output').text($('#fruitSelect').val());
-    });
-
-
-
 
     Inputmask.extendAliases({
         rut: {
