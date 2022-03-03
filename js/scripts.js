@@ -38,6 +38,31 @@ $(function() {
 
     var url = window.location.pathname;
 
+    switch (url) {
+        case '/MejorasUX/':
+        case '/MejorasUX/#':
+        case '/MejorasUX/paso2.html?select=cdi':
+        case '/MejorasUX/paso2.html?select=pspt':
+        case '/MejorasUX/paso2.html':
+        case '/MejorasUX/paso3.html':
+        case '/index.html':
+        case '/index.html#':
+        case '/paso2.html?select=cdi':
+        case '/paso2.html?select=pspt':
+        case '/paso2.html':
+        case '/paso3.html':
+            $('#reservar-nav > a').css("color", "#028080");
+            $('#reservar-nav > a').css("font-weight", "600");
+            $('#reservar-nav > a').css("font-size", "1.2rem");
+            $('#reservar-nav > a > svg > path').css("fill", "#028080");
+            $('#reservar-nav > a > svg > path').css('fill-opacity', '1');
+            $("#reservar-nav").css("border-top", "#028080 solid 0.2rem");
+            $("#reservar-nav-top").css("font-weight", 700);
+            $("#reservar-nav-top").css("border-bottom", "#009999 solid 0.3rem");
+            $("#reservar-nav-top").css("color", "#009999");
+            break;
+    };
+
     // Comportamientos pasos
     switch (url) {
         case '/MejorasUX/':
@@ -101,32 +126,6 @@ $(function() {
             $('#tipoId').html('Indique número de pasaporte del paciente. Solo para <strong>extranjeros <u>sin</u> Cédula</strong>.');
         }
     });
-
-
-    switch (url) {
-        case '/MejorasUX/':
-        case '/MejorasUX/#':
-        case '/MejorasUX/paso2.html?select=cdi':
-        case '/MejorasUX/paso2.html?select=pspt':
-        case '/MejorasUX/paso2.html':
-        case '/MejorasUX/paso3.html':
-        case 'index.html':
-        case 'index.html#':
-        case 'paso2.html?select=cdi':
-        case 'paso2.html?select=pspt':
-        case 'paso2.html':
-        case 'paso3.html':
-            $('#reservar-nav > a').css("color", "#028080");
-            $('#reservar-nav > a').css("font-weight", "600");
-            $('#reservar-nav > a').css("font-size", "1.2rem");
-            $('#reservar-nav > a > svg > path').css("fill", "#028080");
-            $('#reservar-nav > a > svg > path').css('fill-opacity', '1');
-            $("#reservar-nav").css("border-top", "#028080 solid 0.2rem");
-            $("#reservar-nav-top").css("font-weight", 700);
-            $("#reservar-nav-top").css("border-bottom", "#009999 solid 0.3rem");
-            $("#reservar-nav-top").css("color", "#009999");
-            break;
-    };
 
 
     Inputmask.extendAliases({
