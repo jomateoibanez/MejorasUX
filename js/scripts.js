@@ -40,8 +40,8 @@ $(function() {
 
     // Comportamientos pasos
     switch (url) {
-        case 'index.html':
-        case 'index.html#':
+        case '/MejorasUX/':
+        case '/index.html':
             $("#progreso").addClass("progreso");
             $("#p2").addClass("paso-off");
             $("#p3").addClass("paso-off");
@@ -100,10 +100,10 @@ $(function() {
     switch (url) {
         case 'index.html':
         case 'index.html#':
-        case '/paso2.html?select=cdi':
-        case '/paso2.html?select=pspt':
-        case '/paso2.html':
-        case '/paso3.html':
+        case 'paso2.html?select=cdi':
+        case 'paso2.html?select=pspt':
+        case 'paso2.html':
+        case 'paso3.html':
             $('#reservar-nav > a').css("color", "#028080");
             $('#reservar-nav > a').css("font-weight", "600");
             $('#reservar-nav > a').css("font-size", "1.2rem");
