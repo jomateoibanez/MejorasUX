@@ -41,7 +41,9 @@ $(function() {
     // Comportamientos pasos
     switch (url) {
         case '/MejorasUX/':
+        case '/MejorasUX/#': //Github
         case '/index.html':
+        case '/index.html#':
             $("#progreso").addClass("progreso");
             $("#p2").addClass("paso-off");
             $("#p3").addClass("paso-off");
@@ -49,6 +51,9 @@ $(function() {
             $("#p5").addClass("paso-off");
             $("#p1").html("1");
             break
+        case '/MejorasUX/paso2.html?select=cdi':
+        case '/MejorasUX/paso2.html?select=pspt':
+        case '/MejorasUX/paso2.html':
         case 'paso2.html?select=cdi':
         case 'paso2.html?select=pspt':
         case 'paso2.html':
@@ -61,6 +66,7 @@ $(function() {
             $("#p2").html("2");
             break
         case 'paso3.html':
+        case '/MejorasUX/paso3.html':
             $("#progreso").addClass("progreso-3");
             $("#p1").html("✓");
             $("#p1").addClass("paso-ok");
@@ -98,6 +104,12 @@ $(function() {
 
 
     switch (url) {
+        case '/MejorasUX/':
+        case '/MejorasUX/#':
+        case '/MejorasUX/paso2.html?select=cdi':
+        case '/MejorasUX/paso2.html?select=pspt':
+        case '/MejorasUX/paso2.html':
+        case '/MejorasUX/paso3.html':
         case 'index.html':
         case 'index.html#':
         case 'paso2.html?select=cdi':
