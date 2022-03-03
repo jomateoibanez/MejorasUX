@@ -24,7 +24,7 @@ $(function() {
 
     $("a.bx-servicio > p").css("display", "none");
     $("a.bx-servicio > img").css("display", "none");
-    $("a.bx-servicio").append("<img class='loadi' src='/MejorasUX/pic.svg'>");
+    $("a.bx-servicio").append("<img class='loadi' src='SVG/pic.svg'>");
 
 
     /* animacion carga paso 2 */
