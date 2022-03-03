@@ -8,6 +8,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
     </style>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/petite-vue" defer init></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="shortcut icon" href="#">
 
@@ -54,7 +55,6 @@
                         <p>Escriba y seleccione la Especialidad que necesite</p>
                         <div class="ct-input">
                             <label for="servicio" class="input-label required">Nombre de Especialidad</label>
-                            <input type="hidden" id="fruitSelect" value="">
                             <div id="output">
                             </div>
                             <!--
@@ -91,14 +91,61 @@
                         </div>
                         <hr style="height:0.1rem;background-color:rgb(223, 223, 223)">
                         <div class="ct-input">
-                            <h3>¿Qué Especialidad necesita?</h3>
+                            <h3>¿Dónde desea atenderse?</h3>
                             <label for="servicio" class="input-label required">Lugar de atención</label>
-
-                            <input list="filiales" name="servicio" id="servicio">
-                            <datalist id="filiales">
-                                </datalist>
-                            <p id="hlp-input" class="input-helper">Puede seleccionar un centro o una Región</p>
                         </div>
+                        <script src="https://cdn.jsdelivr.net/npm/vue@^2"></script>
+                        <!-- include vue-treeselect & its styles. you can change the version tag to better suit your needs. -->
+                        <script src="https://cdn.jsdelivr.net/npm/@riophae/vue-treeselect@^0.4.0/dist/vue-treeselect.umd.min.js"></script>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@riophae/vue-treeselect@^0.4.0/dist/vue-treeselect.min.css">
+                        <div id="app">
+                            <treeselect v-model="value" :multiple="true" :options="options" :flat="true" :sort-value-by="sortValueBy" :default-expand-level="2" placeholder="Try selecting some options." />
+
+                        </div>
+                        <script>
+                            // register the component
+                            Vue.component('treeselect', VueTreeselect.Treeselect)
+
+                            new Vue({
+                                el: '#app',
+                                data: {
+                                    // define the default value
+                                    value: [],
+                                    // define options
+                                    options: [{
+                                            id: '1VENEEXUELA',
+                                            label: 'Región VENEZUELA'
+                                        },
+
+                                        {
+                                            id: 'RM',
+                                            label: 'Región Metropolitana',
+                                            children: [{
+                                                id: 'Nororiente',
+                                                label: 'Nororiente',
+                                                children: [{
+                                                    id: 'Clínica RedSalud Vitacura',
+                                                    label: 'Clínica RedSalud Vitacura'
+                                                }, {
+                                                    id: 'Centro Médico y Dental Pedro de Valdivia',
+                                                    label: 'Centro Médico y Dental Pedro de Valdivia'
+                                                }, ]
+                                            }, {
+                                                id: 'I REGION',
+                                                label: 'TARAPACA'
+                                            }, ]
+                                        }, {
+                                            id: 'peru',
+                                            label: 'peru'
+                                        }
+                                    ],
+
+                                    sortValueBy: 'LEVEL',
+                                },
+                            })
+                        </script>
+                        <p id="hlp-input" class="input-helper">Puede seleccionar un centro o una Región</p>
+
 
                     </div>
                     <div class="surveyform-btn">
