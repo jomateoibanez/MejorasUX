@@ -60,7 +60,7 @@
                         <script src="https://cdn.jsdelivr.net/npm/vue@^2"></script>
                         <script src="https://cdn.jsdelivr.net/npm/@riophae/vue-treeselect@^0.4.0/dist/vue-treeselect.umd.min.js"></script>
                         <div id="app2">
-                            <treeselect v-model="value" search-nested :options="options" :show-count="true" :disable-branch-nodes="true" :flat="true" :sort-value-by="sortValueBy" :default-expand-level="1" placeholder="Seleccione y presione 'Buscar horas' para continuar" />
+                            <treeselect v-model="value" :options="options" search-nested :disable-branch-nodes="true" :show-count="true" :flat="true" :sort-value-by="sortValueBy" :default-expand-level="1" placeholder="Seleccione y presione 'Buscar horas' para continuar" />
                         </div>
                         <script>
                             // register the component
@@ -265,12 +265,12 @@
                             </li>
                         </ul>
                     </nav>
+                    <script src="dist/jquery.inputmask.js"></script>
+                    <script src="js/scripts.js" type="text/javascript"></script>
                     <!-- </div> -->
                 </footer>
             </div>
         </div>
-        <script src="dist/jquery.inputmask.js"></script>
-        <script src="js/scripts.js" type="text/javascript"></script>
 </body>
 
 </html>
