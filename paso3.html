@@ -8,6 +8,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
     </style>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@riophae/vue-treeselect@^0.4.0/dist/vue-treeselect.min.css">
+
     <script src="https://unpkg.com/petite-vue" defer init></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="shortcut icon" href="#">
@@ -51,13 +53,64 @@
                 </div>
                 <form>
                     <div class="surveyform">
-                        <h3>¿Qué Especialidad necesita?</h3>
+                        <h3>¿Qué servicio necesita?</h3>
                         <p>Escriba y seleccione la Especialidad que necesite</p>
-                        <div class="ct-input">
-                            <label for="servicio" class="input-label required">Nombre de Especialidad</label>
-                            <div id="output">
-                            </div>
-                            <!--
+
+                        <label for="servicio" class="input-label required">Nombre de Especialidad</label>
+                        <script src="https://cdn.jsdelivr.net/npm/vue@^2"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/@riophae/vue-treeselect@^0.4.0/dist/vue-treeselect.umd.min.js"></script>
+                        <div id="app2">
+                            <treeselect v-model="value" search-nested :options="options" :flat="true" :sort-value-by="sortValueBy" :default-expand-level="1" placeholder="Seleccione y presione 'Buscar horas' para continuar" />
+                        </div>
+                        <script>
+                            // register the component
+                            Vue.component('treeselect', VueTreeselect.Treeselect)
+                            new Vue({
+                                el: '#app2',
+                                data: {
+                                    // define the default value
+                                    value: null,
+                                    // define options
+                                    options: [{
+                                        id: 'Imagenes',
+                                        label: 'Imágenes',
+                                        children: [{
+                                            id: 'Resonancias',
+                                            label: 'Resonancias',
+                                            children: [{
+                                                id: 'Angioresonancia abdomen',
+                                                label: 'Angioresonancia Abdomen',
+                                            }, {
+                                                id: 'Angioresonancia aorta',
+                                                label: 'Angioresonancia Aorta',
+                                            }, {
+                                                id: 'Angioresonancia cara',
+                                                label: 'Angioresonancia cara',
+                                            }, {
+                                                id: 'Angioresonancia cerebro',
+                                                label: 'Angioresonancia cerebro',
+                                            }, {
+                                                id: 'Angioresonancia cuello',
+                                                label: 'Angioresonancia cuello',
+                                            }],
+                                        }, {
+                                            id: 'a',
+                                            label: 'Sector Norte',
+                                            children: [{
+                                                id: 'x',
+                                                label: 'Centro Médico y Dental Conchalí',
+                                            }, {
+                                                id: 'z',
+                                                label: 'Centro Médico y Dental Quilicura',
+                                            }]
+                                        }, ]
+                                    }, ],
+                                    sortValueBy: 'LEVEL',
+                                }
+                            })
+                        </script>
+
+                        <!--
                             <input list="servicios" name="servicio" id="servicio">
                                 <datalist id="servicios">
                                     <option value="volvo">Broncopulmonar</option>
@@ -87,19 +140,18 @@
                                     <option value="audi">Urología</option>
                                 </datalist>
                             -->
-                            <p id="hlp-input" class="input-helper" style="padding-bottom: 1.5rem;">Filtre Especialidades usando usando los filtros.</p>
-                        </div>
+                        <p id="hlp-input" class="input-helper" style="padding-bottom: 1.5rem;">Filtre Especialidades usando usando los filtros.</p>
+
                         <hr style="height:0.1rem;background-color:rgb(223, 223, 223)">
                         <div class="ct-input">
-                            <h3>¿Dónde desea atenderse?</h3>
+                            <h3>¿Dónde lo necesita?</h3>
                             <label for="servicio" class="input-label required">Lugar de atención</label>
                         </div>
-                        <script src="https://cdn.jsdelivr.net/npm/vue@^2"></script>
                         <!-- include vue-treeselect & its styles. you can change the version tag to better suit your needs. -->
                         <script src="https://cdn.jsdelivr.net/npm/@riophae/vue-treeselect@^0.4.0/dist/vue-treeselect.umd.min.js"></script>
-                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@riophae/vue-treeselect@^0.4.0/dist/vue-treeselect.min.css">
+
                         <div id="app">
-                            <treeselect v-model="value" :multiple="true" :options="options" :flat="true" :sort-value-by="sortValueBy" :default-expand-level="2" placeholder="Try selecting some options." />
+                            <treeselect v-model="value" :multiple="true" :options="options" :flat="true" :sort-value-by="sortValueBy" :default-expand-level="2" placeholder="Seleccione y presione 'Buscar horas' para continuar" />
                         </div>
                         <script>
                             // register the component
@@ -139,11 +191,8 @@
                                                 id: 'Centro Médico y Dental Conchalí',
                                                 label: 'Centro Médico y Dental Conchalí',
                                             }, {
-                                                id: 'Centro Médico y Dental Conchalí',
-                                                label: 'Centro Médico y Dental Conchalí',
-                                            }, {
-                                                id: 'Centro Médico y Dental Ñuñoa',
-                                                label: 'Centro Médico y Dental Pedro de Valdivia'
+                                                id: 'Centro Médico y Dental Quilicura',
+                                                label: 'Centro Médico y Dental Quilicura',
                                             }]
                                         }, ]
                                     }, ],
@@ -152,19 +201,19 @@
                             })
                         </script>
 
-                        <p id="hlp-input" class="input-helper">Puede seleccionar un centro o una Región</p>
+                        <p id="hlp-input" class="input-helper">Seleccione la filial, o grupo de filiales, donde desea buscarn hora.</p>
+                    </div>
 
-
-                        <div class="surveyform-btn">
-                            <button class="btn-siguiente" type="submit" id="continuar" disabled>
+                    <div class="surveyform-btn">
+                        <button class="btn-siguiente" type="submit" id="continuar" disabled>
                             <div class="tool" id="test" onmouseover="checkBtn()">
                                 <span>Buscar horas</span>
                             </div>
                         </button>
-                            <a href="/MejorasUX/paso2.html">&lt; Volver al Paso 2</a>
-                        </div>
+                        <a href="/MejorasUX/paso2.html">&lt; Volver al Paso 2</a>
+                    </div>
                 </form>
-                </div>
+
                 <div></div>
             </div>
             <div class="footer-bg">
