@@ -54,6 +54,17 @@
                 <form>
                     <div class="surveyform">
                         <h3>¿Qué servicio necesita?</h3>
+                        <div class="ct-servicios">
+                            <a href="" class="bx-servicio load">
+                                <p>Telemedicina</p>
+                                <img src="SVG/icop2/ico-telemedicina.svg">
+                            </a>
+
+                            <a href="/MejorasUX/paso3.html" class="bx-servicio load">
+                                <p>Consultas</p>
+                                <img src="SVG/icop2/consulta.svg">
+                            </a>
+                        </div>
                         <p>Escriba y seleccione la Especialidad que necesite</p>
                         <div class="ct-input"></div>
                         <label for="servicio" class="input-label required">Nombre de Especialidad</label>
@@ -234,7 +245,7 @@
                         <script src="https://cdn.jsdelivr.net/npm/@riophae/vue-treeselect@^0.4.0/dist/vue-treeselect.umd.min.js"></script>
 
                         <div id="app">
-                            <treeselect v-model="value" :multiple="true" :options="options" :flat="true" :sort-value-by="sortValueBy" :default-expand-level="2" placeholder="Seleccione y presione 'Buscar horas' para continuar" />
+                            <treeselect :multiple="true" :options="options" :value-consists-of="valueConsistsOf" v-model="value" :default-expand-level="2" placeholder="Seleccione y presione 'Buscar horas' para continuar" />
                         </div>
                         <script>
                             // register the component
@@ -244,6 +255,7 @@
                                 data: {
                                     // define the default value
                                     value: null,
+                                    valueConsistsOf: 'BRANCH_PRIORITY',
                                     // define options
                                     options: [{
                                         id: 'Región Metropolitana',
@@ -279,7 +291,6 @@
                                             }]
                                         }]
                                     }, ],
-                                    sortValueBy: 'LEVEL',
                                 },
                             })
                         </script>
