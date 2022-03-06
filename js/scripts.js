@@ -79,9 +79,9 @@ $(function() {
         case '/MejorasUX/paso2.html?select=cdi':
         case '/MejorasUX/paso2.html?select=pspt':
         case '/MejorasUX/paso2.html':
-        case 'paso2.html?select=cdi':
-        case 'paso2.html?select=pspt':
-        case 'paso2.html':
+        case '/paso2.html?select=cdi':
+        case '/paso2.html?select=pspt':
+        case '/paso2.html':
             $("#progreso").addClass("progreso-2");
             $("#p1").html("✓");
             $("#p1").addClass("paso-ok");
@@ -90,7 +90,7 @@ $(function() {
             $("#p5").addClass("paso-off");
             $("#p2").html("2");
             break
-        case 'paso3.html':
+        case '/paso3.html':
         case '/MejorasUX/paso3.html':
             $("#progreso").addClass("progreso-3");
             $("#p1").html("✓");
