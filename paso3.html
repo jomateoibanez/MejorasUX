@@ -7,8 +7,9 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
     </style>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@riophae/vue-treeselect@^0.4.0/dist/vue-treeselect.min.css">
+    <link rel="stylesheet" href="css/treeselectvue.css">
     <link rel="stylesheet" href="css/style.css">
+
 
 
     <script src="https://unpkg.com/petite-vue" defer init></script>
@@ -54,26 +55,12 @@
                 </div>
                 <form>
                     <div class="surveyform">
-                        <h3>¿Qué servicio necesita?</h3>
-                        <div class="ct-servicios">
-                            <a href="" class="bx-servicio load">
-                                <p>Telemedicina</p>
-                                <img src="SVG/icop2/ico-telemedicina.svg">
-                            </a>
-
-                            <a href="/MejorasUX/paso3.html" class="bx-servicio load">
-                                <p>Consultas</p>
-                                <img src="SVG/icop2/consulta.svg">
-                            </a>
-                        </div>
-                        <p>Escriba y seleccione la Especialidad que necesite</p>
-                        <div class="ct-input"></div>
+                        <h3>¿Qué especialidad, exámen o servicio necesita?</h3>
                         <label for="servicio" class="input-label required">Nombre de Especialidad</label>
                         <script src="https://cdn.jsdelivr.net/npm/vue@^2"></script>
                         <script src="https://cdn.jsdelivr.net/npm/@riophae/vue-treeselect@^0.4.0/dist/vue-treeselect.umd.min.js"></script>
                         <div id="app2">
-                            <treeselect v-model="value" :options="options" :flattenSearchResults="true" search-nested :disable-branch-nodes="true" :show-count="true" :flat="true" :sort-value-by="sortValueBy" :default-expand-level="1" placeholder="Seleccione y presione 'Buscar horas' para continuar"
-                            />
+                            <treeselect :max-height="300" v-model="value" :options="options" :flattenSearchResults="true" search-nested :disable-branch-nodes="true" :flat="true" :sort-value-by="sortValueBy" :default-expand-level="1" placeholder="Busque y seleccione" />
                         </div>
                         <script>
                             // register the component
@@ -85,11 +72,11 @@
                                     value: null,
                                     // define options
                                     options: [{
-                                        id: 'Imagenes',
-                                        label: 'Imágenes',
+                                        id: 'Imagenelogía y Radiología',
+                                        label: 'Imagenelogía y Radiología',
                                         children: [{
-                                            id: 'Resonancias',
-                                            label: 'Resonancias',
+                                            id: 'Resonancias Magnéticas',
+                                            label: 'Resonancias Magnéticas',
                                             children: [{
                                                 id: 'Angioresonancias',
                                                 label: 'Angioresonancias',
@@ -154,7 +141,7 @@
                                             }],
                                         }, {
                                             id: 'Ecografías - Ecotomografías',
-                                            label: 'Ecografías - Ecotomografías',
+                                            label: 'Ecografías',
                                             children: [{
                                                 id: 'Abdomen',
                                                 label: 'Abdomen',
@@ -202,9 +189,12 @@
                                         }, ]
                                     }, ],
                                     sortValueBy: 'LEVEL',
+                                    alwaysOpen: "true",
                                 },
                             })
                         </script>
+                        <p class="input-helper">Filtre Especialidades usando usando los filtros.</p>
+
 
                         <!--
                             <input list="servicios" name="servicio" id="servicio">
@@ -236,18 +226,14 @@
                                     <option value="audi">Urología</option>
                                 </datalist>
                             -->
-                        <p id="hlp-input" class="input-helper" style="padding-bottom: 1.5rem;">Filtre Especialidades usando usando los filtros.</p>
 
-                        <hr style="height:0.1rem;background-color:rgb(223, 223, 223)">
-                        <div class="ct-input">
-                            <h3>¿Dónde lo necesita?</h3>
-                            <label for="servicio" class="input-label required">Lugar de atención</label>
-                        </div>
+                        <h3>¿Dónde busca hora?</h3>
+                        <label for="servicio" class="input-label required">Lugar de atención</label>
                         <!-- include vue-treeselect & its styles. you can change the version tag to better suit your needs. -->
                         <script src="https://cdn.jsdelivr.net/npm/@riophae/vue-treeselect@^0.4.0/dist/vue-treeselect.umd.min.js"></script>
 
                         <div id="app">
-                            <treeselect :multiple="true" :options="options" :value-consists-of="valueConsistsOf" v-model="value" :default-expand-level="2" placeholder="Seleccione y presione 'Buscar horas' para continuar" />
+                            <treeselect :multiple="true" :options="options" :value-consists-of="valueConsistsOf" v-model="value" :default-expand-level="2" placeholder="Busque y seleccione" />
                         </div>
                         <script>
                             // register the component
@@ -266,14 +252,14 @@
                                             id: 'Nororiente',
                                             label: 'Nororiente',
                                             children: [{
-                                                id: 'Centro Médico Arauco Parque Arauco',
-                                                label: 'Centro Médico y Parque Arauco',
+                                                id: 'Centro Médico y Dental Arauco Parque Arauco',
+                                                label: 'CMD Parque Arauco',
                                             }, {
                                                 id: 'Centro Médico y Dental Ñuñoa',
-                                                label: 'Centro Médico y Dental Ñuñoa',
+                                                label: 'CMD Ñuñoa',
                                             }, {
                                                 id: 'Centro Médico y Dental Pedro de Valdivia',
-                                                label: 'Centro Médico y Dental Pedro de Valdivia',
+                                                label: 'CMD Pedro de Valdivia',
                                             }, {
                                                 id: 'Clínica RedSalud Providencia',
                                                 label: 'Clínica RedSalud Providencia',
@@ -296,7 +282,6 @@
                                 },
                             })
                         </script>
-
                         <p id="hlp-input" class="input-helper">Seleccione la filial, o grupo de filiales, donde desea buscarn hora.</p>
                     </div>
 
@@ -309,6 +294,8 @@
                         <a href="/MejorasUX/paso2.html">&lt; Volver al Paso 2</a>
                     </div>
                 </form>
+
+
 
                 <div></div>
             </div>
