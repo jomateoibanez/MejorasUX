@@ -64,7 +64,6 @@ nav ul {
 }
 
 .logo-header {
-    margin: 0.3rem 0 0 0;
     height: auto;
     transform: scale(0.8);
     align-self: center;
@@ -84,9 +83,12 @@ footer {
     height: 100%;
     width: 100%;
     box-shadow: -0.3rem -0.75rem 1.3rem 0.4rem rgba(91, 91, 91, 0.15);
-    padding: 0 3%;
-    position: sticky;
+    padding: 0;
     bottom: 0;
+}
+
+.footer-desktop {
+    display: none;
 }
 
 .footer-bg {
@@ -123,11 +125,6 @@ footer {
 
 .nav-btm-ct li a:hover {
     color: #75c2a6;
-    text-decoration: none;
-}
-
-a {
-    color: #747473;
     text-decoration: none;
 }
 
@@ -215,7 +212,6 @@ h3 {
 }
 
 li a {
-    color: #747473;
     font-size: 1.4rem;
     line-height: 1.4rem;
     font-weight: 400;
@@ -448,7 +444,7 @@ input[type="radio"] {
 
 .ct-input input,
 .ct-input select {
-    border: 1px solid #dfdfdf; 
+    border: 1px solid #dfdfdf;
     border-radius: 3px;
     font-size: 1.6rem !important;
     background-color: white;
@@ -646,18 +642,58 @@ input[type="radio"] {
     }
     /* Grilla Desktop: Fila Footer */
     footer {
+        display: inline-grid;
+        grid-template-columns: 1fr 800px 1fr;
         border-bottom: 1.8em solid #018081;
         border-top: 0.3em solid #9BCD06;
         background-color: #009999;
         border-radius: 0;
+        grid-area: footer;
+        grid-template-rows: 1fr;
     }
-    .nav-btm-ct {
-        display: none;
+    ul span {
+        color: white;
+        font-size: 1.6rem;
+        font-weight: 700;
+        font-style: italic;
+        text-decoration: underline;
+    }
+    .footer-desktop {
+        display: flex;
+        padding: 0 3%;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+    nav.nav-btm-desktop ul {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        text-align: left;
+    }
+    nav.nav-btm-desktop ul li {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+    .ico-nav {
+        padding-right: 1rem;
+        width: 30px;
+    }
+    nav.nav-btm-desktop ul li a {
+        line-height: 1.2;
+        color: white;
+        font-weight: 400;
     }
     .img-logo-footer {
-        height: 100%;
-        max-width: auto;
-        padding: 5rem 8rem;
+        max-height: 150px;
+        max-width: 270px;
+    }
+    .nav-btm {
+        display: none;
     }
 }
 
