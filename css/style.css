@@ -460,7 +460,11 @@ input[type="radio"] {
 }
 
 .ct-input input:focus {
-    border: 0.2rem solid #CCE5E2;
+    border: 0.2rem solid #CCE5E2!important;
+}
+
+.invalid {
+    border-color: #b92E25;
 }
 
 .ct-servicios {

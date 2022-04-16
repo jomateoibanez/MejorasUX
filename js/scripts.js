@@ -1,9 +1,79 @@
 $(function() {
-    var checkInput = (e) => {
-        const content = $("#rut").val().trim();
-        $('#continuar').prop('disabled', content === '');
-    };
-    $(document).on('keyup', '#rut', checkInput);
+    $("input#rut").rut({
+        formatOn: 'keyup',
+        minimumLength: 8, // validar largo mínimo; default: 2
+        validateOn: 'change' // si no se quiere validar, pasar null
+    });
+
+    // muestra un mensaje de error cuando el rut es inválido
+    $("input#rut").rut().on('rutInvalido', function(e) {
+        $('#hlp-input').html("El rut " + $(this).val() + " es inválido");
+        $('#rut').css("border-color", "#b92E25");
+        $('#hlp-input').css("color", "#b92E25");
+        document.getElementById("continuar").disabled = true;
+    });
+
+    // muestra un mensaje de error cuando el rut es valido
+    $("input#rut").rut().on('rutValido', function(e, rut, dv) {
+        $('#hlp-input').html("Rut valido");
+        document.getElementById("continuar").disabled = false;
+        $('#hlp-input').css("color", "#028080");
+    });
+
+
+
+    /* Esto cambia el label del Paso 1 en función del radio button escogido */
+    $("input[id='PASAPORTE']").click(function() {
+        var psptchecked = $("input[id='PASAPORTE']:checked").val();
+        if (psptchecked == "pspt") {
+            $('#tipoId').html('Número de Pasaporte');
+            $('#rut').css("border-color", "#dfdfdf");
+            $('#rut').prop("value", "");
+            $('#rut').prop("placeholder", "Ej: 1234567890");
+            $('#hlp-input').html('Solo para <strong>extranjeros <u>sin</u> Cédula</strong>.');
+            $('#hlp-input').css("color", "#747473");
+        } else {
+            $('#tipoId').html('Rut del Paciente');
+        }
+    });
+
+    $("input[id='CDI']").click(function() {
+        var cdichecked = $("input[id='CDI']:checked").val();
+        if (cdichecked == "cdi") {
+            $('#tipoId').html('RUT del Paciente');
+            $('#hlp-input').html('Ingrese RUT del paciente.');
+            $('#rut').prop("placeholder", "Ej: 8.765.432-1");
+            $('#rut').prop("value", "");
+            $("input#rut").rut({
+                formatOn: 'keyup',
+                minimumLength: 8, // validar largo mínimo; default: 2
+                validateOn: 'change' // si no se quiere validar, pasar null
+            });
+
+            // muestra un mensaje de error cuando el rut es inválido
+            $("input#rut").rut().on('rutInvalido', function(e) {
+                $('#hlp-input').html("El rut " + $(this).val() + " es inválido");
+                $('#rut').css("border-color", "#b92E25");
+                $('#hlp-input').css("color", "#b92E25");
+                document.getElementById("continuar").disabled = true;
+            });
+
+            // muestra un mensaje de error cuando el rut es valido
+            $("input#rut").rut().on('rutValido', function(e, rut, dv) {
+                $('#hlp-input').html("Rut valido");
+                document.getElementById("continuar").disabled = false;
+                $('#hlp-input').css("color", "#028080");
+            });
+
+        } else {
+            $('#tipoId').html('Indique número de pasaporte del paciente. Solo para <strong>extranjeros <u>sin</u> Cédula</strong>.');
+        };
+    });
+
+
+
+
+
 
 
     /* Esto agrega un tooltip al hacer over en continuar sin llenar datos */
@@ -18,7 +88,7 @@ $(function() {
             $('#test').prop('title', '');
         }
     };
-    $(document).on('mouseover', '#test', checkBtn);
+
 
 
 
@@ -40,12 +110,14 @@ $(function() {
 
     switch (url) {
         case '/MejorasUX/':
+        case '/MejorasUX/registro.html':
         case '/MejorasUX/#':
         case '/MejorasUX/paso2.html?select=cdi':
         case '/MejorasUX/paso2.html?select=pspt':
         case '/MejorasUX/paso2.html':
         case '/MejorasUX/paso3.html':
         case '/index.html':
+        case '/registro.html':
         case '/index.html#':
         case '/paso2.html?select=cdi':
         case '/paso2.html?select=pspt':
@@ -69,6 +141,7 @@ $(function() {
         case '/MejorasUX/#': //Github
         case '/index.html':
         case '/index.html#':
+        case '/registro.html':
             $("#progreso").addClass("progreso");
             $("#p2").addClass("paso-off");
             $("#p3").addClass("paso-off");
@@ -102,55 +175,4 @@ $(function() {
             $("#p5").addClass("paso-off");
             break
     };
-
-
-
-    /* Esto cambia el label del Paso 1 en función del radio button escogido */
-    $("input[id='PASAPORTE']").click(function() {
-        var psptchecked = $("input[id='PASAPORTE']:checked").val();
-        if (psptchecked == "pspt") {
-            $('#tipoId').html('Número de Pasaporte');
-            $('#hlp-input').html('Solo para <strong>extranjeros <u>sin</u> Cédula</strong>.');
-        } else {
-            $('#tipoId').html('Rut del Paciente');
-        }
-    });
-
-
-    $("input[id='CDI']").click(function() {
-        var cdichecked = $("input[id='CDI']:checked").val();
-        if (cdichecked == "cdi") {
-            $('#tipoId').html('RUT del Paciente');
-            $('#hlp-input').html('Ingrese RUT del paciente.');
-        } else {
-            $('#tipoId').html('Indique número de pasaporte del paciente. Solo para <strong>extranjeros <u>sin</u> Cédula</strong>.');
-        }
-    });
-
-
-    Inputmask.extendAliases({
-        rut: {
-            mask: '(9(.999){2}-K)|(99(.999){2}-K)',
-            autoUnmask: false, //para que .val() devuelva sin mascara (sin puntos ni guion)
-            keepStatic: true, //para que el formato de mascara mas corta se mantenga hasta que sea necesario el mas largo
-            showMaskOnFocus: false, //oculta la mascara en focus
-            showMaskOnHover: false, //oculta la mascara en hover
-            definitions: {
-                'K': {
-                    validator: '[0-9|kK]',
-                    casing: 'upper',
-                }
-            }
-        }
-    });
-
-    $('#rut').inputmask();
-
-
-
-
-
-
-
-
 });
