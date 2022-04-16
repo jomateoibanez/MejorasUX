@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/petite-vue" defer init></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/jquery.rut.js"></script>
     <link rel="shortcut icon" href="#">
 
 </head>
@@ -40,7 +41,7 @@
         <div class="main">
             <div></div>
             <div class="ct-form">
-                <h1>Reservar hora</h1>
+                <h1>Agende su atención en 5 sencillos pasos</h1>
                 <h2>Paso 1: Identifique al Paciente</h2>
                 <div class="progreso" id="progreso"></div>
                 <div class="pelotas-pasos">
@@ -74,14 +75,14 @@
 
                         <div class="ct-input">
                             <label class="input-label required" required id="tipoId">RUT del Paciente</label>
-                            <input id="rut" type="text" placeholder="Ej: 8.765.432-1" data-inputmask="'alias': 'rut'">
+                            <input id="rut" type="text" maxlength="12" placeholder="Ej: 8.765.432-1">
                             <p id="hlp-input" class="input-helper">Ingrese RUT del paciente.</p>
                         </div>
                     </div>
                     <div class="surveyform-btn">
                         <button class="btn-siguiente" type="submit" id="continuar" disabled>
                             <div class="tool" id="test" onmouseover="checkBtn()">
-                                <span>Continuar</span>
+                                <span>CONTINUAR</span>
                             </div>
                         </button>
                     </div>

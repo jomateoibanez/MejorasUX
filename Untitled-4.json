@@ -1,0 +1,74 @@
+{
+    "info": {
+        "_postman_id": "d8a57efd-e970-4f46-b2e8-3c0cdcb4e6b1",
+        "name": "Botlab ListaEspera",
+        "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+    },
+    "item": [{
+        "name": "Botlab ListaEspera DEV",
+        "id": "1a27f395-cc87-41eb-b8c7-11ea6b86517e",
+        "request": {
+            "method": "POST",
+            "header": [{
+                "key": "x-api-key",
+                "value": "5yTdtrPZkCJ4fHVoGJ6fdSGP3vx2CGri",
+                "type": "text"
+            }],
+            "body": {
+                "mode": "raw",
+                "raw": "{\"ReservationId\": \"c652e410-2df4-42b5-be07-ace70147b0f3\", \"Tasks\": [{\"DueDate\": \"2021-03-17T19:52:33+00:00\", \"PreferredInterval\": {\"HourFrom\": null, \"HourTo\": null}, \"Status\": 0, \"PatientId\": \"4a8a00d9-9a06-4f04-a782-acc3001beb54\", \"ServiceId\": \"6dee9850-ec21-41a2-91e8-a8aa013b8a95\", \"ResourceId\": \"f40069be-cdd7-4c1d-813d-a8bd015c57f2\", \"CenterId\": \"f80ba6ae-d846-4934-ab9b-a8ac010a03f6\", \"Observations\": null}]}",
+                "options": {
+                    "raw": {
+                        "language": "json"
+                    }
+                }
+            },
+            "url": "https://redsalud-dev.apigee.net/listaespera"
+        },
+        "response": []
+    }, {
+        "name": "Botlab ListaEspera QA",
+        "id": "d1fc1629-740f-4985-98f1-e04868ea4cf6",
+        "request": {
+            "method": "POST",
+            "header": [{
+                "key": "x-api-key",
+                "value": "5yTdtrPZkCJ4fHVoGJ6fdSGP3vx2CGri",
+                "type": "text"
+            }],
+            "body": {
+                "mode": "raw",
+                "raw": "{\"ReservationId\": \"c652e410-2df4-42b5-be07-ace70147b0f3\", \"Tasks\": [{\"DueDate\": \"2021-03-17T19:52:33+00:00\", \"PreferredInterval\": {\"HourFrom\": null, \"HourTo\": null}, \"Status\": 0, \"PatientId\": \"4a8a00d9-9a06-4f04-a782-acc3001beb54\", \"ServiceId\": \"6dee9850-ec21-41a2-91e8-a8aa013b8a95\", \"ResourceId\": \"f40069be-cdd7-4c1d-813d-a8bd015c57f2\", \"CenterId\": \"f80ba6ae-d846-4934-ab9b-a8ac010a03f6\", \"Observations\": null}]}",
+                "options": {
+                    "raw": {
+                        "language": "json"
+                    }
+                }
+            },
+            "url": "https://redsalud-qa.apigee.net/listaespera"
+        },
+        "response": []
+    }, {
+        "name": "Botlab ListaEspera PROD",
+        "id": "11f5fe86-b0ed-4378-b2e3-0284b49c7516",
+        "request": {
+            "method": "POST",
+            "header": [{
+                "key": "x-api-key",
+                "value": "MO7KNVYfdtaDxntA6yQ0abtbRvJ6Q65T",
+                "type": "text"
+            }],
+            "body": {
+                "mode": "raw",
+                "raw": "{\"ReservationId\": \"c652e410-2df4-42b5-be07-ace70147b0f3\", \"Tasks\": [{\"DueDate\": \"2021-03-17T19:52:33+00:00\", \"PreferredInterval\": {\"HourFrom\": null, \"HourTo\": null}, \"Status\": 0, \"PatientId\": \"4a8a00d9-9a06-4f04-a782-acc3001beb54\", \"ServiceId\": \"6dee9850-ec21-41a2-91e8-a8aa013b8a95\", \"ResourceId\": \"f40069be-cdd7-4c1d-813d-a8bd015c57f2\", \"CenterId\": \"f80ba6ae-d846-4934-ab9b-a8ac010a03f6\", \"Observations\": null}]}",
+                "options": {
+                    "raw": {
+                        "language": "json"
+                    }
+                }
+            },
+            "url": "https://redsalud-prod.apigee.net/listaespera"
+        },
+        "response": []
+    }]
+}

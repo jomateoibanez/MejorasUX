@@ -3,7 +3,7 @@
 <html lang="es">
 
 <head>
-    <title>Agenda RedSalud: Paso 1</title>
+    <title>Agenda RedSalud: Nuevo Paciente</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
     </style>
@@ -39,8 +39,8 @@
         <div class="main">
             <div></div>
             <div class="ct-form">
-                <h1>¿Qué servicio necesita agendar hoy?</h1>
-                <h2>Paso 2: Seleccione el Servicio</h2>
+                <h1>Reservar hora</h1>
+                <h2>Paso 1.1: Registre al Paciente </h2>
                 <div class="progreso" id="progreso"></div>
                 <div class="pelotas-pasos">
                     <div id="p1" class="paso"></div>
@@ -51,45 +51,58 @@
                 </div>
                 <form>
                     <div class="surveyform">
-                        <h3>Presione el servicio</h3>
-                        <div class="ct-servicios">
-                            <a href="" class="bx-servicio load">
-                                <p>Telemedicina</p>
-                                <img src="SVG/icop2/ico-telemedicina.svg">
-                            </a>
+                                <h3>INGRESE LA INFORMACIÓN DEL PACIENTE</h3>
+                                <p>Estos datos nos permitirán ofertecerte las <u><strong>mejores</strong></u> horas para ti</p>
+                                <div style=" display:grid; grid-template-columns: 1fr 1fr; column-gap: 2rem;">
+                                <div class="ct-input" >
+                                    <label class="input-label required" required id="tipoId">Primer Nombre</label>
+                                    <input id="rut" type="text" placeholder="Ej: Juan" data-inputmask="'alias': 'rut'">
+                                </div>
+                                <div class="ct-input">
+                                    <label class="input-label" required id="tipoId">Segundo nombre</label>
+                                    <input id="rut" type="text" placeholder="Ej: Ignacio" data-inputmask="'alias': 'rut'">
+                                </div>
+                                <div class="ct-input">
+                                    <label class="input-label required" required id="tipoId">Primer Apellido</label>
+                                    <input id="rut" type="text" placeholder="Ej: Gonzalez" data-inputmask="'alias': 'rut'">
+                                </div>
+                                <div class="ct-input">
+                                    <label class="input-label required" required id="tipoId">Segundo Apellido</label>
+                                    <input id="rut" type="text" placeholder="Ej: Gonzalez" data-inputmask="'alias': 'rut'">
+                                </div>
 
-                            <a href="/MejorasUX/paso3.html" class="bx-servicio load">
-                                <p>Consultas</p>
-                                <img src="SVG/icop2/consulta.svg">
-                            </a>
-                            <a href="#" class="bx-servicio load">
-                                <p>Exámenes y Procedimientos</p>
-                                <img src="SVG/icop2//examen.svg">
-                            </a>
-                            <a href="#" class="bx-servicio load">
-                                <p>Dental</p>
-                                <img src="SVG/icop2/ico-dental.svg">
-                            </a>
+                                <div class="ct-input">
+                                    <label class="input-label required" required id="tipoId">Segundo Apellido</label>
+                                    <input id="rut" type="text" placeholder="Ej: Gonzalez" data-inputmask="'alias': 'rut'">
+                                </div>
 
-                            <a href="#" class="bx-servicio load">
-                                <p>Kinesiología</p>
-                                <img src="SVG/icop2/ico-kinesiologia.svg">
-                            </a>
-
-                            <a href="#" class="bx-servicio load">
-                                <p>Vacunatorio</p>
-                                <img src="SVG/icop2/ico-vacunatorio.svg">
-                            </a>
-                            <a href="#" class="bx-servicio load">
-                                <p>Donación de Sangre</p>
-                                <img src="SVG/icop2/ico-donacionsangre.svg">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="surveyform-btn">
-                        <a href="/MejorasUX/">&lt; Volver al Paso 1</a>
-                    </div>
-                </form>
+                                <div class="ct-input-radio">
+                                    <label id="docType" class="input-label required">Pronombres</label>
+                                    <input type="radio" value="cdi" name="select" id="CDI" checked>
+                                    <input type="radio" value="pspt" name="select" id="PASAPORTE">
+        
+                                    <label for="CDI" class="option option-1">
+                                        <div class="dot"></div>
+                                        <span>Hombre</span>
+                                    </label>
+        
+                                    <label for="PASAPORTE" class="option option-2">
+                                        <div class="dot"></div>
+                                        <span class="text">Mujer</span>
+                                    </label>
+                                </div>
+                            
+                                </div>
+                            </div>
+                            <div class="surveyform-btn">
+                                <button class="btn-siguiente" type="submit" id="continuar" disabled>
+                                    <div class="tool" id="test" onmouseover="checkBtn()">
+                                        <span>Continuar</span>
+                                    </div>
+                                </button>
+                                <a href="/MejorasUX/">&lt; Volver al Paso 1</a>
+                            </form>
+                            </div>
             </div>
             <div></div>
         </div>
