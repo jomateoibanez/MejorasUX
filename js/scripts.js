@@ -57,7 +57,6 @@ $(function() {
                 $('#hlp-input').css("color", "#b92E25");
                 document.getElementById("continuar").disabled = true;
             });
-
             // muestra un mensaje de error cuando el rut es valido
             $("input#rut").rut().on('rutValido', function(e, rut, dv) {
                 $('#hlp-input').html("Rut valido");
