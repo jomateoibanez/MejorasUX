@@ -1,41 +1,16 @@
+var cont = document.getElementById("asd");
+
+function changeSizeByBtn(size) {
+    // Set value of the parameter as fontSize
+    cont.style.fontSize = size + "%"; // <- HERE
+};
+
+
 $(function() {
-    $("input#rut").rut({
-        formatOn: 'keyup',
-        minimumLength: 8, // validar largo mínimo; default: 2
-        validateOn: 'change' // si no se quiere validar, pasar null
-    });
 
-    // muestra un mensaje de error cuando el rut es inválido
-    $("input#rut").rut().on('rutInvalido', function(e) {
-        $('#hlp-input').html("El rut " + $(this).val() + " es inválido");
-        $('#rut').css("border-color", "#b92E25");
-        $('#hlp-input').css("color", "#b92E25");
-        document.getElementById("continuar").disabled = true;
-    });
-
-    // muestra un mensaje de error cuando el rut es valido
-    $("input#rut").rut().on('rutValido', function(e, rut, dv) {
-        $('#hlp-input').html("Rut valido");
-        document.getElementById("continuar").disabled = false;
-        $('#hlp-input').css("color", "#028080");
-    });
-
-
-
-    /* Esto cambia el label del Paso 1 en función del radio button escogido */
-    $("input[id='PASAPORTE']").click(function() {
-        var psptchecked = $("input[id='PASAPORTE']:checked").val();
-        if (psptchecked == "pspt") {
-            $('#tipoId').html('Número de Pasaporte');
-            $('#rut').css("border-color", "#dfdfdf");
-            $('#rut').prop("value", "");
-            $('#rut').prop("placeholder", "Ej: 1234567890");
-            $('#hlp-input').html('Solo para <strong>extranjeros <u>sin</u> Cédula</strong>.');
-            $('#hlp-input').css("color", "#747473");
-        } else {
-            $('#tipoId').html('Rut del Paciente');
-        }
-    });
+    window.onload = function() {
+        $("input[id='CDI']").click();
+    };
 
     $("input[id='CDI']").click(function() {
         var cdichecked = $("input[id='CDI']:checked").val();
@@ -45,9 +20,9 @@ $(function() {
             $('#rut').prop("placeholder", "Ej: 8.765.432-1");
             $('#rut').prop("value", "");
             $("input#rut").rut({
-                formatOn: 'keyup',
-                minimumLength: 8, // validar largo mínimo; default: 2
-                validateOn: 'change' // si no se quiere validar, pasar null
+                formatOn: 'keyup change',
+                minimumLength: 7, // validar largo mínimo; default: 2
+                validateOn: 'keyup' // si no se quiere validar, pasar null
             });
 
             // muestra un mensaje de error cuando el rut es inválido
@@ -58,16 +33,34 @@ $(function() {
                 document.getElementById("continuar").disabled = true;
             });
             // muestra un mensaje de error cuando el rut es valido
-            $("input#rut").rut().on('rutValido', function(e, rut, dv) {
+            $("#rut").rut().on('rutValido', function(e, rut, dv) {
                 $('#hlp-input').html("Rut valido");
                 document.getElementById("continuar").disabled = false;
                 $('#hlp-input').css("color", "#028080");
+                $('#rut').css("border-color", "#009999");
             });
 
         } else {
             $('#tipoId').html('Indique número de pasaporte del paciente. Solo para <strong>extranjeros <u>sin</u> Cédula</strong>.');
         };
     });
+
+    /* Esto cambia el label del Paso 1 en función del radio button escogido */
+    $("input[id='PASAPORTE']").click(function() {
+        var psptchecked = $("input[id='PASAPORTE']:checked").val();
+        if (psptchecked == "pspt") {
+            $('#tipoId').html('Número de Pasaporte');
+            $('#rut').css("border-color", "#dfdfdf");
+            $('#rut').prop("value", "");
+            $('#rut').prop("placeholder", "Ej: 1234567890");
+            $('#hlp-input').html('Indique número de pasaporte del paciente. Solo para <strong>extranjeros <u>sin</u> Cédula de Identidad</strong>.');
+            $('#hlp-input').css("color", "#747473");
+        } else {
+            $('#tipoId').html('Rut del Paciente');
+        }
+
+    });
+
 
 
 

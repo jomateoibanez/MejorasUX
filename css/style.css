@@ -28,6 +28,52 @@ body {
     grid-template-rows: 6.5rem 1fr 8rem;
 }
 
+.separacion {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-font-chica {
+    height: 2.1rem;
+    width: 2.1rem;
+    color: rgba(0, 0, 0, 0.38);
+    font-weight: 600;
+    border-radius: 5px;
+    background: #D9D9D9;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.75em;
+}
+
+.btn-font {
+    margin: 0 2.2rem;
+    height: 2.7rem;
+    width: 2.7rem;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+    background: #01635e;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+}
+
+.btn-font-grande {
+    height: 3.3rem;
+    width: 3.3rem;
+    color: rgba(0, 0, 0, 0.38);
+    font-weight: 600;
+    border-radius: 5px;
+    background: #D9D9D9;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+}
+
+.btn-font-chica:hover,
+.btn-font:hover,
+.btn-font-grande:hover {
+    background: #6ABAB8;
+    color: white;
+}
+
 header {
     grid-area: header;
     display: inline-grid;
@@ -310,7 +356,10 @@ li a {
 }
 
 .ct-input-radio .option:hover,
-.btn-siguiente:hover {
+.btn-siguiente:hover,
+.btn-font-chica:hover,
+.btn-font:hover,
+.btn-font-grande:hover {
     position: relative;
     -webkit-filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.15));
     filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.15));

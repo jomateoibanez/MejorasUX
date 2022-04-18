@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<html lang="es">
+<html lang="es" id="asd">
 
 <head>
     <title>Agenda RedSalud: Paso 1</title>
@@ -41,8 +41,26 @@
         <div class="main">
             <div></div>
             <div class="ct-form">
-                <h1>Agende su atención en 5 sencillos pasos</h1>
-                <h2>Paso 1: Identifique al Paciente</h2>
+                <div class="separacion">
+                    <div>
+                        <h1>Reserva de Horas</h1>
+                        <h2>Paso 1: Identifique al Paciente</h2>
+                    </div>
+                    <div class="separacion">
+                        <div style="display: flex; align-items: center; flex-direction: column; justify-content:flex-end; padding-bottom: 2rem;">
+                            <button class="btn-font-grande" type="button" onclick="changeSizeByBtn(74.5)">A<sup>+</sup></button>
+                            <p style="color: #747473; font-weight: 400;">Grande</p>
+                        </div>
+                        <div style="display: flex; align-items: center; flex-direction: column; justify-content:flex-end; padding-bottom: 2rem;">
+                            <button class="btn-font" type="button" onclick="changeSizeByBtn(62.5)">A</button>
+                            <p style="color: #01635e; font-weight: 700;">Regular</p>
+                        </div>
+                        <div style="display: flex; align-items: center; flex-direction: column; justify-content:flex-end; padding-bottom: 2rem;">
+                            <button class="btn-font-chica" type="button" onclick="changeSizeByBtn(50.5)">A<sup>-</sup></button>
+                            <p>Pequeña</p>
+                        </div>
+                    </div>
+                </div>
                 <div class="progreso" id="progreso"></div>
                 <div class="pelotas-pasos">
                     <div id="p1" class="paso"></div>
@@ -54,8 +72,8 @@
                 <form action="/MejorasUX/paso2.html">
                     <!-- borrar para sacar de github -->
                     <div class="surveyform">
-                        <h3>¿ Para quién es la hora ? </h3>
-                        <p>Complete con los datos del <u><strong>Paciente</strong></u> que será atendido</p>
+                        <h3>¿Para quién es la hora?</h3>
+                        <p>Completa con los datos del <u><strong>Paciente</strong></u> para quién deseas reservar una hora:</p>
                         <div class="ct-input-radio">
                             <label id="docType" class="input-label required">Documento de Identificación</label>
                             <input type="radio" value="cdi" name="select" id="CDI" checked>
@@ -74,7 +92,7 @@
                         </div>
                         <div class="ct-input">
                             <label class="input-label required" required id="tipoId">RUT del Paciente</label>
-                            <input id="rut" type="text" maxlength="12" placeholder="Ej: 8.765.432-1">
+                            <input id="rut" type="text" maxlength="12" placeholder="Ej: 8.765.432-1" onkeyup="this.value=this.value.replace(/[^-kK.0-9]/g, '')">
                             <p id="hlp-input" class="input-helper">Ingrese RUT del paciente.</p>
                         </div>
                     </div>
@@ -97,7 +115,7 @@
                     <img class='img-logo-footer' src="logoredsaludblanco.svg">
                     <nav class="nav-btm-desktop">
                         <ul class="navlinks">
-                            <span>Responda sus Dudas:</span>
+                            <span>Responde tus Dudas:</span>
                             <li><img class="ico-nav" src="SVG/money.svg"> <a target="_blank" href="https://www.redsalud.cl/informacion-para-el-paciente/arancel">Aranceles y Medios de Pago</a></li>
                             <li><img class="ico-nav" src="SVG/ic-ubicacion.svg"> <a target="_blank" href="https://www.redsalud.cl/ubicaciones">Sedes y Horarios RedSalud</a></li>
                             <li><img class="ico-nav" src="SVG/examen.svg"> <a target="_blank" href="https://examenes.redsalud.cl/#/">Resultados de Exámenes</a></li>
