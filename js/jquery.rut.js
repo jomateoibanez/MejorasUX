@@ -22,11 +22,11 @@
 ;
 (function($) {
     var defaults = {
-        validateOn: 'blur',
-        formatOn: 'blur',
+        validateOn: 'keyup',
+        formatOn: 'keyup',
         ignoreControlKeys: true,
         useThousandsSeparator: true,
-        minimumLength: 2
+        minimumLength: 7
     };
 
     //private methods
@@ -106,14 +106,18 @@
     }
 
     function formatInput($input, useThousandsSeparator) {
-        $input.val(format($input.val(), useThousandsSeparator));
+        if ($input.opts.formatOn != null) {
+            $input.val(format($input.val(), useThousandsSeparator));
+        }
     }
 
     function validateInput($input) {
-        if (isValidRut($input.val(), $input.opts)) {
-            $input.trigger('rutValido', splitRutAndDv($input.val()));
-        } else {
-            $input.trigger('rutInvalido');
+        if ($input.opts.validateOn != null) {
+            if (isValidRut($input.val(), $input.opts)) {
+                $input.trigger('rutValido', splitRutAndDv($input.val()));
+            } else {
+                $input.trigger('rutInvalido');
+            }
         }
     }
 
