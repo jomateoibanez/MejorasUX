@@ -3,7 +3,7 @@
 <html lang="es" id="asd">
 
 <head>
-    <title>Agenda RedSalud: Paso 1</title>
+    <title>Agenda RS - Paso 2: Selección Área</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
     </style>
@@ -41,8 +41,8 @@
             <div class="ct-form">
                 <div class="separacion">
                     <div>
-                        <h1>Reserva de Horas</h1>
-                        <h2>Paso 1: Identifique al Paciente</h2>
+                        <h1>Paso 2: Seleccione el Área</h1>
+                        <h2>Presione el área de la hora que necesita agendar</h2>
                     </div>
                     <div class="separacion">
                         <div style="display: flex; align-items: center; flex-direction: column; justify-content:flex-end; padding-bottom: 2rem;">
@@ -69,7 +69,7 @@
                 </div>
                 <form>
                     <div class="surveyform">
-                        <h3>Presione el servicio</h3>
+                        <h3>¿En qué Área necesitas agendar una hora?</h3>
                         <div class="ct-servicios">
                             <a href="" class="bx-servicio load">
                                 <p>Telemedicina</p>
@@ -113,8 +113,22 @@
         </div>
         <div class="footer-bg">
             <footer>
-                <img class='img-logo-footer' src="logoredsaludblanco.svg">
-                <!-- <div class="nav-btm-ct"> -->
+                <!-- footer desktop -->
+                <div class="columna"></div>
+                <div class="footer-desktop">
+                    <img class='img-logo-footer' src="logoredsaludblanco.svg">
+                    <nav class="nav-btm-desktop">
+                        <ul class="navlinks">
+                            <span>Responde tus Dudas:</span>
+                            <li><img class="ico-nav" src="SVG/money.svg"> <a target="_blank" href="https://www.redsalud.cl/informacion-para-el-paciente/arancel">Aranceles y Medios de Pago</a></li>
+                            <li><img class="ico-nav" src="SVG/ic-ubicacion.svg"> <a target="_blank" href="https://www.redsalud.cl/ubicaciones">Sedes y Horarios RedSalud</a></li>
+                            <li><img class="ico-nav" src="SVG/examen.svg"> <a target="_blank" href="https://examenes.redsalud.cl/#/">Resultados de Exámenes</a></li>
+                            <li><img class="ico-nav" src="SVG/info.svg"> <a href="#">¿Cómo prepararme para mi atención?</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="columna"></div>
+                <!-- footer mobile -->
                 <nav class="nav-btm">
                     <ul class="nav-btm-ct">
                         <li id="reservar-nav">
@@ -160,7 +174,6 @@
                         </li>
                     </ul>
                 </nav>
-                <!-- </div> -->
             </footer>
         </div>
     </div>
