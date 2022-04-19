@@ -39,8 +39,26 @@
         <div class="main">
             <div></div>
             <div class="ct-form">
-                <h1>Paso 2: Seleccione el Servicio?</h1>
-                <h2>Paso 2: Seleccione el Servicio</h2>
+                <div class="separacion">
+                    <div>
+                        <h1>Reserva de Horas</h1>
+                        <h2>Paso 1: Identifique al Paciente</h2>
+                    </div>
+                    <div class="separacion">
+                        <div style="display: flex; align-items: center; flex-direction: column; justify-content:flex-end; padding-bottom: 2rem;">
+                            <button class="btn-font-grande" type="button" onclick="changeSizeByBtn(74.5)">A<sup>+</sup></button>
+                            <p style="color: #747473; font-weight: 400;">Grande</p>
+                        </div>
+                        <div style="display: flex; align-items: center; flex-direction: column; justify-content:flex-end; padding-bottom: 2rem;">
+                            <button class="btn-font" type="button" onclick="changeSizeByBtn(62.5)">A</button>
+                            <p style="color: #01635e; font-weight: 700;">Regular</p>
+                        </div>
+                        <div style="display: flex; align-items: center; flex-direction: column; justify-content:flex-end; padding-bottom: 2rem;">
+                            <button class="btn-font-chica" type="button" onclick="changeSizeByBtn(50.5)">A<sup>-</sup></button>
+                            <p>Pequeña</p>
+                        </div>
+                    </div>
+                </div>
                 <div class="progreso" id="progreso"></div>
                 <div class="pelotas-pasos">
                     <div id="p1" class="paso"></div>
