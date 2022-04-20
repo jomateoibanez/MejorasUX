@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="es">
+
+<head>
+    <title>Agenda RedSalud: Paso 3</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+    </style>
+    <link rel="stylesheet" href="css/treeselectvue.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+
+    <script src="https://unpkg.com/petite-vue" defer init></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="#">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="columna"></div>
+            <nav class="nav-top">
+                <a href="https://www.redsalud.cl/" target="_blank"><img src="logo.png" class="logo-header"></a>
+                <ul class="navlinks">
+                    <li><a id="reservar-nav-top" href="#">Reservar hora</a></li>
+                    <li><a href="#">Consultar hora</a></li>
+                    <li><a href="#">Confirmar hora</a></li>
+                    <li><a href="#">Reprogramar hora</a></li>
+                    <li><a href="#">Anular hora</a></li>
+                </ul>
+                <svg class="hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 336.004 336.00201">
+                    <path d="M336.002,168.001a16.80039,16.80039,0,0,1-16.801,16.801H16.801a16.801,16.801,0,0,1,0-33.602h302.4A16.80041,16.80041,0,0,1,336.002,168.001Z" fill="#099"/>
+                    <path d="M336.002,319.201a16.79536,16.79536,0,0,1-16.801,16.801H16.801a16.801,16.801,0,0,1,0-33.602h302.4A16.79541,16.79541,0,0,1,336.002,319.201Z" fill="#099"/>
+                    <path d="M.002,16.801A16.80041,16.80041,0,0,1,16.803,0h302.4a16.801,16.801,0,1,1,0,33.602H16.803A16.80041,16.80041,0,0,1,.002,16.801Z" fill="#099"/>
+                </svg>
+            </nav>
+            <div class="columna"></div>
+        </header>
+
+        <div class="main">
+            <div></div>
+            <div class="ct-form">
+                <h1>¿Qué Especialista, Exámen o Servicio necesita Agendar? ¿Dónde?</h1>
+                <h2>Paso 3: Indique Especialidad y lugar de Atención</h2>
+                <div class="progreso" id="progreso"></div>
+                <div class="pelotas-pasos">
+                    <div id="p1" class="paso"></div>
+                    <div id="p2" class="paso"></div>
+                    <div id="p3" class="paso"></div>
+                    <div id="p4" class="paso"></div>
+                    <div id="p5" class="paso"></div>
+                </div>
+                <form>
+                    <div class="surveyform">
+                        <h3>BUSQUE Y SELECCIONE LA ESPECIALIDAD SERVICIO O EXÁMEN A AGENDAR </h3>
+                        <label for="servicio" class="input-label required">Nombre de Especialidad</label>
+                        <script src="https://cdn.jsdelivr.net/npm/vue@^2"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/@riophae/vue-treeselect@^0.4.0/dist/vue-treeselect.umd.min.js"></script>
+                        <div id="app2">
+                            <treeselect :max-height="300" v-model="value" :options="options" :flattenSearchResults="true" search-nested :disable-branch-nodes="true" :flat="true" :sort-value-by="sortValueBy" :default-expand-level="1" placeholder="Busque y seleccione" />
+                        </div>
+                        <script>
+                            // register the component
+                            Vue.component('treeselect', VueTreeselect.Treeselect)
+                            new Vue({
+                                el: '#app2',
+                                data: {
+                                    // define the default value
+                                    value: null,
+                                    // define options
+                                    options: [{
+                                        id: 'Imagenelogía y Radiología',
+                                        label: 'Imagenelogía y Radiología',
+                                        children: [{
+                                            id: 'Resonancias Magnéticas',
+                                            label: 'Resonancias Magnéticas',
+                                            children: [{
+                                                id: 'Angioresonancias',
+                                                label: 'Angioresonancias',
+                                                children: [{
+                                                    id: '5195',
+                                                    label: 'Angioresonancia cara',
+                                                }, {
+                                                    id: '6138',
+                                                    label: 'Angioresonancia cerebro',
+                                                }, {
+                                                    id: 'Angioresonancia cerebro y cuello',
+                                                    label: 'Angioresonancia cerebro y cuello',
+                                                }, {
+                                                    id: 'Angioresonancia de arterias renales',
+                                                    label: 'Angioresonancia de arterias renales',
+                                                }, {
+                                                    id: 'Angioresonancia de pelvis',
+                                                    label: 'Angioresonancia de pelvis',
+                                                }, {
+                                                    id: 'Angioresonancia de torax',
+                                                    label: 'Angioresonancia de torax',
+                                                }, {
+                                                    id: 'Angioresonancia extremidades inferiores',
+                                                    label: 'Angioresonancia extremidades inferiores',
+                                                }, {
+                                                    id: 'Angioresonancia extremidades superiores',
+                                                    label: 'Angioresonancia extremidades superiores',
+                                                }],
+                                            }, {
+                                                id: 'Abdomen',
+                                                label: 'Abdomen',
+                                                children: [{
+                                                    id: '6137',
+                                                    label: 'Angioresonancia abdomen',
+                                                }, {
+                                                    id: 'Resonancia abdomen',
+                                                    label: 'Resonancia abdomen',
+                                                }, {
+                                                    id: 'Resonancia abdomen y colangioresonancia',
+                                                    label: 'Resonancia abdomen y colangioresonancia',
+                                                }, {
+                                                    id: 'Resonancia abdomen y pelvis',
+                                                    label: 'Angioresonancia cuello',
+                                                }],
+                                            }, {
+                                                id: 'Articulaciones',
+                                                label: 'Articulaciones',
+                                                children: [{
+                                                    id: 'Resonancia articulaciones sacroilíacas',
+                                                    label: 'Resonancia articulaciones sacroilíacas',
+                                                }, {
+                                                    id: 'Resonancia articulaciones temporo madibulares (atm)',
+                                                    label: 'Resonancia articulaciones temporo madibulares (atm)',
+                                                }],
+                                            }, {
+                                                id: 'Aorta',
+                                                label: 'Aorta',
+                                                children: [{
+                                                    id: '5194',
+                                                    label: 'Angioresonancia aorta',
+                                                }],
+                                            }],
+                                        }, {
+                                            id: 'Ecografías - Ecotomografías',
+                                            label: 'Ecografías',
+                                            children: [{
+                                                id: 'Abdomen',
+                                                label: 'Abdomen',
+                                                children: [{
+                                                    id: 'Ecografía abdominal',
+                                                    label: 'Ecografía abdominal',
+                                                }, {
+                                                    id: 'Ecografía abdominal y pelviana femenina',
+                                                    label: 'Ecografía abdominal y pelviana femenina',
+                                                }, {
+                                                    id: 'Ecografía abdominal y pelviana masculina',
+                                                    label: 'Ecografía abdominal y pelviana masculina',
+                                                }, {
+                                                    id: 'Ecografía abdominal y renal',
+                                                    label: 'Ecografía abdominal y renal',
+                                                }],
+                                            }, {
+                                                id: 'Ecografía axilar derecha',
+                                                label: 'Ecografía axilar derecha',
+                                            }, {
+                                                id: 'Ecografía axilar izquierda',
+                                                label: 'Ecografía axilar izquierda',
+                                            }, {
+                                                id: 'Ecografía cerebral',
+                                                label: 'Ecografía cerebral',
+                                            }, {
+                                                id: 'Ecografía cervical',
+                                                label: 'Ecografía cervical',
+                                            }, {
+                                                id: 'Ecografía de ambas caderas',
+                                                label: 'Ecografía de ambas caderas',
+                                            }, {
+                                                id: 'Ecografía de ambas escápulas',
+                                                label: 'Ecografía de ambas escápulas',
+                                            }, {
+                                                id: 'Ecografía de ambas manos',
+                                                label: 'Ecografía de ambas manos',
+                                            }, {
+                                                id: 'Ecografía de ambas muñecas',
+                                                label: 'Ecografía de ambas muñecas',
+                                            }, {
+                                                id: 'Ecografía de ambas parótidas',
+                                                label: 'Ecografía de ambas parótidas',
+                                            }],
+                                        }, ]
+                                    }, ],
+                                    sortValueBy: 'LEVEL',
+                                    alwaysOpen: "true",
+                                },
+                            })
+                        </script>
+                        <p class="input-helper">Filtre Especialidades usando usando los filtros.</p>
+
+
+                        <!--
+                            <input list="servicios" name="servicio" id="servicio">
+                                <datalist id="servicios">
+                                    <option value="volvo">Broncopulmonar</option>
+                                    <option value="Cardiología">Cardiología</option>
+                                    <option value="Cirugía">Cirugía</option>
+                                    <option value="audi">Dermatología</option>
+                                    <option value="audi">Endocrinología</option>
+                                    <option value="audi">Gastroenterología</option>
+                                    <option value="audi">Ginecología</option>
+                                    <option value="audi">Ginecoobstreticia</option>
+                                    <option value="audi">Hematología</option>
+                                    <option value="audi">Kinesiología</option>
+                                    <option value="audi">Medicina Familiar</option>
+                                    <option value="audi">Medicina General</option>
+                                    <option value="audi">Medicina Interna</option>
+                                    <option value="audi">Nefrología</option>
+                                    <option value="audi">Neonatología</option>
+                                    <option value="audi">Neurología</option>
+                                    <option value="audi">Nutriciín y dietética</option>
+                                    <option value="audi">Nutriología</option>
+                                    <option value="audi">Otorrinolaringología</option>
+                                    <option value="audi">Pediatría</option>
+                                    <option value="audi">Psicología</option>
+                                    <option value="audi">Psiquiatría</option>
+                                    <option value="audi">Reumatología</option>
+                                    <option value="audi">Tratamiento anticoagulante y ortopedia</option>
+                                    <option value="audi">Urología</option>
+                                </datalist>
+                            -->
+
+                        <h3>ESCRIBA O BUSQUE </h3>
+                        <label for="servicio" class="input-label required">Lugar de atención</label>
+                        <!-- include vue-treeselect & its styles. you can change the version tag to better suit your needs. -->
+                        <script src="https://cdn.jsdelivr.net/npm/@riophae/vue-treeselect@^0.4.0/dist/vue-treeselect.umd.min.js"></script>
+
+                        <div id="app">
+                            <treeselect :multiple="true" :options="options" :value-consists-of="valueConsistsOf" v-model="value" :default-expand-level="2" placeholder="Busque y seleccione" />
+                        </div>
+                        <script>
+                            // register the component
+                            Vue.component('treeselect', VueTreeselect.Treeselect)
+                            new Vue({
+                                el: '#app',
+                                data: {
+                                    // define the default value
+                                    value: null,
+                                    valueConsistsOf: 'BRANCH_PRIORITY',
+                                    // define options
+                                    options: [{
+                                        id: 'Región Metropolitana',
+                                        label: 'Región Metropolitana',
+                                        children: [{
+                                            id: 'Nororiente',
+                                            label: 'Nororiente',
+                                            children: [{
+                                                id: 'Centro Médico y Dental Arauco Parque Arauco',
+                                                label: 'CMD Parque Arauco',
+                                            }, {
+                                                id: 'Centro Médico y Dental Ñuñoa',
+                                                label: 'CMD Ñuñoa',
+                                            }, {
+                                                id: 'Centro Médico y Dental Pedro de Valdivia',
+                                                label: 'CMD Pedro de Valdivia',
+                                            }, {
+                                                id: 'Clínica RedSalud Providencia',
+                                                label: 'Clínica RedSalud Providencia',
+                                            }, {
+                                                id: 'Clínica RedSalud Vitacura',
+                                                label: 'Clínica RedSalud Vitacura',
+                                            }],
+                                        }, {
+                                            id: 'Sector Norte',
+                                            label: 'Sector Norte',
+                                            children: [{
+                                                id: 'Centro Médico y Dental Conchalí',
+                                                label: 'Centro Médico y Dental Conchalí',
+                                            }, {
+                                                id: 'Centro Médico y Dental Quilicura',
+                                                label: 'Centro Médico y Dental Quilicura',
+                                            }]
+                                        }]
+                                    }, ],
+                                },
+                            })
+                        </script>
+                        <p id="hlp-input" class="input-helper">Seleccione la filial, o grupo de filiales, donde desea buscarn hora.</p>
+                    </div>
+
+                    <div class="surveyform-btn">
+                        <button class="btn-siguiente" type="submit" id="continuar" disabled>
+                            <div class="tool" id="test" onmouseover="checkBtn()">
+                                <span>Buscar horas</span>
+                            </div>
+                        </button>
+                        <a href="/MejorasUX/paso2.html">&lt; Volver al Paso 2</a>
+                    </div>
+                </form>
+
+
+
+                <div></div>
+            </div>
+        </div>
+        <div class="footer-bg">
+            <footer>
+                <img class='img-logo-footer' src="logoredsaludblanco.svg">
+                <!-- <div class="nav-btm-ct"> -->
+                <nav class="nav-btm">
+                    <ul class="nav-btm-ct">
+                        <li id="reservar-nav">
+                            <a href="#" class="nav-bottom reservar-ico">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 532.56104 517.44397">
+                                            <path class="reservar-ico" fill="#028080" fill-opacity="0.38" d="M486.08,52.083H442.4v20.16a65.00839,65.00839,0,0,1-64.961,64.961c-35.84,0-64.398-29.121-64.398-64.961V52.083H220.08v20.16c0,35.84-29.121,64.961-64.398,64.961A65.00839,65.00839,0,0,1,90.721,72.243V52.083H47.041A46.36359,46.36359,0,0,0,.561,98.563v86.801h532V98.563a46.72513,46.72513,0,0,0-46.48-46.48Z"/>
+                                            <path class="reservar-ico" fill="#028080" fill-opacity="0.38" d="M155.68,104.164a31.90522,31.90522,0,0,0,31.922-31.922l-.00391-40.32A31.90521,31.90521,0,0,0,155.67609,0a32.2729,32.2729,0,0,0-31.922,31.922v40.32c-.55469,17.922,14.004,31.922,31.926,31.922Z"/>
+                                            <path class="reservar-ico" fill="#028080" fill-opacity="0.38" d="M377.44,104.164a31.90522,31.90522,0,0,0,31.922-31.922V31.922a31.922,31.922,0,1,0-63.844,0v40.32A31.56039,31.56039,0,0,0,377.44,104.164Z"/>
+                                            <path class="reservar-ico" fill="#028080" fill-opacity="0.38"d="M.56,470.964a46.36357,46.36357,0,0,0,46.48,46.48H485.52A46.36357,46.36357,0,0,0,532,470.964V217.844H0v253.12Zm199.36-120.96h48.719V301.285a17.359,17.359,0,1,1,34.718,0v48.719h48.719a17.359,17.359,0,0,1,0,34.718H283.357v48.719a17.359,17.359,0,0,1-34.718,0V384.722H199.92a17.359,17.359,0,1,1,0-34.718Z"/>
+                                        </svg> Reservar
+                                <br>hora
+                            </a>
+                        </li>
+
+
+                        <li id="confirmar-nav">
+                            <a href="#" class="nav-bottom confirmar-ico">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 532.00403 511.28202">
+                                        <path fill="#000000" fill-opacity="0.38" d="M472.08,40.878H394.24V18.48a18.48,18.48,0,0,0-36.96,0V40.878h-182V18.48a18.48,18.48,0,1,0-36.96,0V40.878H59.922A59.99,59.99,0,0,0,0,100.8V451.36a59.99,59.99,0,0,0,59.922,59.922h412.16a59.99,59.99,0,0,0,59.922-59.922l-.00391-351.12c0-32.48-26.879-59.359-59.922-59.359Zm22.961,409.92a22.58872,22.58872,0,0,1-22.961,22.398H59.92c-12.32,0-22.961-10.078-22.961-22.398V213.358h457.52v237.44Zm0-274.96H36.961V100.236A22.58871,22.58871,0,0,1,59.922,77.838h77.84v22.398a18.48,18.48,0,0,0,36.96,0V77.838h182v22.398a18.48,18.48,0,0,0,36.96,0V77.838h77.84c12.32,0,22.961,10.078,22.961,22.398l-.0039,75.602Z"/>
+                                        <path fill="#000000" fill-opacity="0.38" d="M234.08,413.278a17.74366,17.74366,0,0,0,26.882,0l100.8-107.52c7.28119-7.28119,6.71881-19.039-1.12109-26.32a18.62786,18.62786,0,0,0-26.32,1.1211l-86.801,92.957-46.48-49.84a19.13787,19.13787,0,0,0-26.32-1.12109c-7.2812,7.28119-7.8398,19.039-1.12109,26.32Z"/>
+                                    </svg> Confirmar
+                                <br>hora
+                            </a>
+                        </li>
+
+                        <li id="reagendar-nav">
+                            <a href="#" class="nav-bottom reagendar-ico">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 532.00403 511.28202">
+                                    <path fill="#000000" fill-opacity="0.38" d="M266.002,459.197c63.84,0,115.92-52.078,115.92-115.92,0-63.836-52.082-115.92-115.92-115.92s-115.92,52.078-115.92,115.92c0,63.84,52.082,115.92,115.92,115.92Zm0-202.16a86.24,86.24,0,1,1-86.238,86.242A86.27445,86.27445,0,0,1,266.002,257.037Z" />
+                                    <path fill="#000000" fill-opacity="0.38" d="M292.882,376.877a12.85276,12.85276,0,0,0,7.83982,2.23831,15.523,15.523,0,0,0,12.879-7.28119c3.9219-6.71881,1.67968-16.238-5.0391-20.16l-27.441-16.801v-35.84a14.559,14.559,0,1,0-29.118,0v44.238a13.91811,13.91811,0,0,0,7.28119,12.32Z" />
+                                    <path fill="#000000" fill-opacity="0.38" d="M472.08,40.878H394.24V18.48a18.48,18.48,0,0,0-36.96,0V40.878h-182V18.48a18.48,18.48,0,1,0-36.96,0V40.878H59.922A59.99,59.99,0,0,0,0,100.8V451.36a59.99,59.99,0,0,0,59.922,59.922h412.16a59.99,59.99,0,0,0,59.922-59.922l-.00391-351.12c0-32.48-26.879-59.359-59.922-59.359Zm22.961,409.92a22.58872,22.58872,0,0,1-22.961,22.398H59.92c-12.32,0-22.961-10.078-22.961-22.398V213.358h457.52v237.44Zm0-274.96H36.961V100.236A22.58871,22.58871,0,0,1,59.922,77.838h77.84v22.398a18.48,18.48,0,0,0,36.96,0V77.838h182v22.398a18.48,18.48,0,0,0,36.96,0V77.838h77.84c12.32,0,22.961,10.078,22.961,22.398l-.0039,75.602Z" />
+                                </svg> Reagendar <br>hora
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-bottom anular-ico">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 532.00403 511.28202">
+                                    <path fill="#000000" fill-opacity="0.38" d="M472.08,40.878H394.24V18.48a18.48,18.48,0,0,0-36.96,0V40.878h-182V18.48a18.48,18.48,0,1,0-36.96,0V40.878H59.922A59.99,59.99,0,0,0,0,100.8V451.36a59.99,59.99,0,0,0,59.922,59.922h412.16a59.99,59.99,0,0,0,59.922-59.922l-.00391-351.12c0-32.48-26.879-59.359-59.922-59.359Zm22.961,409.92a22.58872,22.58872,0,0,1-22.961,22.398H59.92c-12.32,0-22.961-10.078-22.961-22.398V213.358h457.52v237.44Zm0-274.96H36.961V100.236A22.58871,22.58871,0,0,1,59.922,77.838h77.84v22.398a18.48,18.48,0,0,0,36.96,0V77.838h182v22.398a18.48,18.48,0,0,0,36.96,0V77.838h77.84c12.32,0,22.961,10.078,22.961,22.398l-.0039,75.602Z" fill="#9b9b9a"/>
+                                    <path fill="#000000" fill-opacity="0.38" d="M196.56,413.278a19.29391,19.29391,0,0,0,12.879,5.60159,17.006,17.006,0,0,0,12.879-5.60159l43.121-43.121,43.121,43.121a19.29391,19.29391,0,0,0,12.879,5.60159,17.006,17.006,0,0,0,12.879-5.60159,18.58735,18.58735,0,0,0,0-26.32l-43.121-43.121,43.121-43.121a18.61105,18.61105,0,0,0-26.32-26.32l-41.996,42.562-43.121-43.121a18.61106,18.61106,0,0,0-26.32,26.32l43.121,43.121-43.121,43.121c-7.27731,7.83591-7.27731,19.598,0,26.879Z" fill="#9b9b9a"/>
+                                </svg> Anular
+                                <br>hora
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- </div> -->
+            </footer>
+        </div>
+    </div>
+    <script src="dist/jquery.inputmask.js"></script>
+    <script src="js/scripts.js" type="text/javascript"></script>
+</body>
+
+</html>

@@ -12,7 +12,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/jquery.rut.js"></script>
     <link rel="shortcut icon" href="#">
-
 </head>
 
 <body>
@@ -23,43 +22,37 @@
                 <a href="https://www.redsalud.cl/" target="_blank"><img src="logo.png" class="logo-header"></a>
                 <ul class="navlinks">
                     <li><a id="reservar-nav-top" href="#">Reservar hora</a></li>
+                    <div class="columna" style="width: 5px;"></div>
                     <li><a href="#">Consultar hora</a></li>
+                    <div class="columna" style="width: 5px;"></div>
                     <li><a href="#">Confirmar hora</a></li>
-                    <li><a href="#">Reprogramar hora</a></li>
+                    <div class="columna" style="width: 5px;"></div>
                     <li><a href="#">Anular hora</a></li>
+                    <div class="columna" style="width: 5px;"></div>
+                    <div class="columna"></div>
                 </ul>
-                <svg class="hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 336.004 336.00201">
-                    <path d="M336.002,168.001a16.80039,16.80039,0,0,1-16.801,16.801H16.801a16.801,16.801,0,0,1,0-33.602h302.4A16.80041,16.80041,0,0,1,336.002,168.001Z" fill="#099"/>
-                    <path d="M336.002,319.201a16.79536,16.79536,0,0,1-16.801,16.801H16.801a16.801,16.801,0,0,1,0-33.602h302.4A16.79541,16.79541,0,0,1,336.002,319.201Z" fill="#099"/>
-                    <path d="M.002,16.801A16.80041,16.80041,0,0,1,16.803,0h302.4a16.801,16.801,0,1,1,0,33.602H16.803A16.80041,16.80041,0,0,1,.002,16.801Z" fill="#099"/>
-                </svg>
+                <div style="display: flex; flex-direction: column; height: 100%; justify-content: center;">
+                    <div class="separacion">
+                        <div style="display: flex; align-items: center; flex-direction: column; justify-content: space-around;">
+                            <button class="btn-font grande" type="button" onclick="changeSizeByBtn(1.1)">A<sup style="align-self: flex-start;">+</sup></button>
+                        </div>
+                        <div style="display: flex; align-items: center; flex-direction: column; justify-content: space-around;">
+                            <button class="btn-font" type="button" onclick="cont.style.fontSize = 62.5 + '%';">A</button>
+                        </div>
+                        <div style="display: flex; align-items: center; flex-direction: column; justify-content: space-around;">
+                            <button class="btn-font chica" type="button" onclick="changeSizeByBtn(0.9)">A<span style="padding-bottom: 1rem; font-weight: 600;">-</span></button>
+                        </div>
+                    </div>
+                </div>
             </nav>
             <div class="columna"></div>
         </header>
-
-
         <div class="main">
             <div></div>
             <div class="ct-form">
-                <div class="separacion">
-                    <div>
-                        <h1>Reserva de Horas</h1>
-                        <h2>Paso 1: Ingresa los datos del Paciente</h2>
-                    </div>
-                    <div class="separacion">
-                        <div style="display: flex; align-items: center; flex-direction: column; justify-content:flex-end; padding-bottom: 2rem;">
-                            <button class="btn-font-grande" type="button" onclick="changeSizeByBtn(74.5)">A<sup>+</sup></button>
-                            <p style="color: #747473; font-weight: 400;">Grande</p>
-                        </div>
-                        <div style="display: flex; align-items: center; flex-direction: column; justify-content:flex-end; padding-bottom: 2rem;">
-                            <button class="btn-font" type="button" onclick="changeSizeByBtn(62.5)">A</button>
-                            <p style="color: #01635e; font-weight: 700;">Regular</p>
-                        </div>
-                        <div style="display: flex; align-items: center; flex-direction: column; justify-content:flex-end; padding-bottom: 2rem;">
-                            <button class="btn-font-chica" type="button" onclick="changeSizeByBtn(50.5)">A<sup>-</sup></button>
-                            <p>Pequeña</p>
-                        </div>
-                    </div>
+                <div>
+                    <h1>Reserva de Horas</h1>
+                    <h2>Paso 1: Ingresar datos de Paciente</h2>
                 </div>
                 <div class="progreso" id="progreso"></div>
                 <div class="pelotas-pasos">
@@ -72,22 +65,22 @@
                 <form action="/MejorasUX/paso2.html">
                     <!-- borrar para sacar de github -->
                     <div class="surveyform">
-                        <h3>¿Para quién es la hora que Agendarás?</h3>
-                        <p>Completa con los datos del <u><strong>Paciente</strong></u> que será atendido con esta hora:</p>
+                        <h3>¿Para quién es la hora?</h3>
+                        <p>Completa los datos del <u><strong>Paciente</strong> que será atendido:</u></p>
                         <div class="ct-input-radio">
-                            <label id="docType" class="input-label required">Documento de Identificación</label>
+                            <label id="docType" class="input-label required primer-il">Documento de Identificación</label>
                             <input type="radio" value="cdi" name="select" id="CDI" checked>
                             <input type="radio" value="pspt" name="select" id="PASAPORTE">
 
                             <label for="CDI" class="option option-1">
-                                <div class="dot"></div>
-                                <span>Cédula de identidad</span>
-                            </label>
+                                    <div class="dot"></div>
+                                    <span>Cédula de identidad</span>
+                                </label>
 
                             <label for="PASAPORTE" class="option option-2">
-                                <div class="dot"></div>
-                                <span class="text">Pasaporte</span>
-                            </label>
+                                    <div class="dot"></div>
+                                    <span class="text">Pasaporte</span>
+                                </label>
 
                         </div>
                         <div class="ct-input">
@@ -98,10 +91,10 @@
                     </div>
                     <div class="surveyform-btn">
                         <button class="btn-siguiente" type="submit" id="continuar" disabled>
-                            <div class="tool" id="test" onmouseover="checkBtn()">
-                                <span>CONTINUAR</span>
-                            </div>
-                        </button>
+                                <div class="tool" id="test" onmouseover="checkBtn()">
+                                    <span>CONTINUAR</span>
+                                </div>
+                            </button>
                     </div>
                 </form>
             </div>
@@ -130,11 +123,11 @@
                         <li id="reservar-nav">
                             <a href="#" class="nav-bottom reservar-ico">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 532.56104 517.44397">
-                                            <path class="reservar-ico" fill="#028080" fill-opacity="0.38" d="M486.08,52.083H442.4v20.16a65.00839,65.00839,0,0,1-64.961,64.961c-35.84,0-64.398-29.121-64.398-64.961V52.083H220.08v20.16c0,35.84-29.121,64.961-64.398,64.961A65.00839,65.00839,0,0,1,90.721,72.243V52.083H47.041A46.36359,46.36359,0,0,0,.561,98.563v86.801h532V98.563a46.72513,46.72513,0,0,0-46.48-46.48Z"/>
-                                            <path class="reservar-ico" fill="#028080" fill-opacity="0.38" d="M155.68,104.164a31.90522,31.90522,0,0,0,31.922-31.922l-.00391-40.32A31.90521,31.90521,0,0,0,155.67609,0a32.2729,32.2729,0,0,0-31.922,31.922v40.32c-.55469,17.922,14.004,31.922,31.926,31.922Z"/>
-                                            <path class="reservar-ico" fill="#028080" fill-opacity="0.38" d="M377.44,104.164a31.90522,31.90522,0,0,0,31.922-31.922V31.922a31.922,31.922,0,1,0-63.844,0v40.32A31.56039,31.56039,0,0,0,377.44,104.164Z"/>
-                                            <path class="reservar-ico" fill="#028080" fill-opacity="0.38"d="M.56,470.964a46.36357,46.36357,0,0,0,46.48,46.48H485.52A46.36357,46.36357,0,0,0,532,470.964V217.844H0v253.12Zm199.36-120.96h48.719V301.285a17.359,17.359,0,1,1,34.718,0v48.719h48.719a17.359,17.359,0,0,1,0,34.718H283.357v48.719a17.359,17.359,0,0,1-34.718,0V384.722H199.92a17.359,17.359,0,1,1,0-34.718Z"/>
-                                        </svg> Reservar
+                                                <path class="reservar-ico" fill="#028080" fill-opacity="0.38" d="M486.08,52.083H442.4v20.16a65.00839,65.00839,0,0,1-64.961,64.961c-35.84,0-64.398-29.121-64.398-64.961V52.083H220.08v20.16c0,35.84-29.121,64.961-64.398,64.961A65.00839,65.00839,0,0,1,90.721,72.243V52.083H47.041A46.36359,46.36359,0,0,0,.561,98.563v86.801h532V98.563a46.72513,46.72513,0,0,0-46.48-46.48Z"/>
+                                                <path class="reservar-ico" fill="#028080" fill-opacity="0.38" d="M155.68,104.164a31.90522,31.90522,0,0,0,31.922-31.922l-.00391-40.32A31.90521,31.90521,0,0,0,155.67609,0a32.2729,32.2729,0,0,0-31.922,31.922v40.32c-.55469,17.922,14.004,31.922,31.926,31.922Z"/>
+                                                <path class="reservar-ico" fill="#028080" fill-opacity="0.38" d="M377.44,104.164a31.90522,31.90522,0,0,0,31.922-31.922V31.922a31.922,31.922,0,1,0-63.844,0v40.32A31.56039,31.56039,0,0,0,377.44,104.164Z"/>
+                                                <path class="reservar-ico" fill="#028080" fill-opacity="0.38"d="M.56,470.964a46.36357,46.36357,0,0,0,46.48,46.48H485.52A46.36357,46.36357,0,0,0,532,470.964V217.844H0v253.12Zm199.36-120.96h48.719V301.285a17.359,17.359,0,1,1,34.718,0v48.719h48.719a17.359,17.359,0,0,1,0,34.718H283.357v48.719a17.359,17.359,0,0,1-34.718,0V384.722H199.92a17.359,17.359,0,1,1,0-34.718Z"/>
+                                            </svg> Reservar
                                 <br>hora
                             </a>
                         </li>
@@ -143,9 +136,9 @@
                         <li id="confirmar-nav">
                             <a href="#" class="nav-bottom confirmar-ico">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 532.00403 511.28202">
-                                        <path fill="#000000" fill-opacity="0.38" d="M472.08,40.878H394.24V18.48a18.48,18.48,0,0,0-36.96,0V40.878h-182V18.48a18.48,18.48,0,1,0-36.96,0V40.878H59.922A59.99,59.99,0,0,0,0,100.8V451.36a59.99,59.99,0,0,0,59.922,59.922h412.16a59.99,59.99,0,0,0,59.922-59.922l-.00391-351.12c0-32.48-26.879-59.359-59.922-59.359Zm22.961,409.92a22.58872,22.58872,0,0,1-22.961,22.398H59.92c-12.32,0-22.961-10.078-22.961-22.398V213.358h457.52v237.44Zm0-274.96H36.961V100.236A22.58871,22.58871,0,0,1,59.922,77.838h77.84v22.398a18.48,18.48,0,0,0,36.96,0V77.838h182v22.398a18.48,18.48,0,0,0,36.96,0V77.838h77.84c12.32,0,22.961,10.078,22.961,22.398l-.0039,75.602Z"/>
-                                        <path fill="#000000" fill-opacity="0.38" d="M234.08,413.278a17.74366,17.74366,0,0,0,26.882,0l100.8-107.52c7.28119-7.28119,6.71881-19.039-1.12109-26.32a18.62786,18.62786,0,0,0-26.32,1.1211l-86.801,92.957-46.48-49.84a19.13787,19.13787,0,0,0-26.32-1.12109c-7.2812,7.28119-7.8398,19.039-1.12109,26.32Z"/>
-                                    </svg> Confirmar
+                                            <path fill="#000000" fill-opacity="0.38" d="M472.08,40.878H394.24V18.48a18.48,18.48,0,0,0-36.96,0V40.878h-182V18.48a18.48,18.48,0,1,0-36.96,0V40.878H59.922A59.99,59.99,0,0,0,0,100.8V451.36a59.99,59.99,0,0,0,59.922,59.922h412.16a59.99,59.99,0,0,0,59.922-59.922l-.00391-351.12c0-32.48-26.879-59.359-59.922-59.359Zm22.961,409.92a22.58872,22.58872,0,0,1-22.961,22.398H59.92c-12.32,0-22.961-10.078-22.961-22.398V213.358h457.52v237.44Zm0-274.96H36.961V100.236A22.58871,22.58871,0,0,1,59.922,77.838h77.84v22.398a18.48,18.48,0,0,0,36.96,0V77.838h182v22.398a18.48,18.48,0,0,0,36.96,0V77.838h77.84c12.32,0,22.961,10.078,22.961,22.398l-.0039,75.602Z"/>
+                                            <path fill="#000000" fill-opacity="0.38" d="M234.08,413.278a17.74366,17.74366,0,0,0,26.882,0l100.8-107.52c7.28119-7.28119,6.71881-19.039-1.12109-26.32a18.62786,18.62786,0,0,0-26.32,1.1211l-86.801,92.957-46.48-49.84a19.13787,19.13787,0,0,0-26.32-1.12109c-7.2812,7.28119-7.8398,19.039-1.12109,26.32Z"/>
+                                        </svg> Confirmar
                                 <br>hora
                             </a>
                         </li>
@@ -153,18 +146,18 @@
                         <li id="reagendar-nav">
                             <a href="#" class="nav-bottom reagendar-ico">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 532.00403 511.28202">
-                                    <path fill="#000000" fill-opacity="0.38" d="M266.002,459.197c63.84,0,115.92-52.078,115.92-115.92,0-63.836-52.082-115.92-115.92-115.92s-115.92,52.078-115.92,115.92c0,63.84,52.082,115.92,115.92,115.92Zm0-202.16a86.24,86.24,0,1,1-86.238,86.242A86.27445,86.27445,0,0,1,266.002,257.037Z" />
-                                    <path fill="#000000" fill-opacity="0.38" d="M292.882,376.877a12.85276,12.85276,0,0,0,7.83982,2.23831,15.523,15.523,0,0,0,12.879-7.28119c3.9219-6.71881,1.67968-16.238-5.0391-20.16l-27.441-16.801v-35.84a14.559,14.559,0,1,0-29.118,0v44.238a13.91811,13.91811,0,0,0,7.28119,12.32Z" />
-                                    <path fill="#000000" fill-opacity="0.38" d="M472.08,40.878H394.24V18.48a18.48,18.48,0,0,0-36.96,0V40.878h-182V18.48a18.48,18.48,0,1,0-36.96,0V40.878H59.922A59.99,59.99,0,0,0,0,100.8V451.36a59.99,59.99,0,0,0,59.922,59.922h412.16a59.99,59.99,0,0,0,59.922-59.922l-.00391-351.12c0-32.48-26.879-59.359-59.922-59.359Zm22.961,409.92a22.58872,22.58872,0,0,1-22.961,22.398H59.92c-12.32,0-22.961-10.078-22.961-22.398V213.358h457.52v237.44Zm0-274.96H36.961V100.236A22.58871,22.58871,0,0,1,59.922,77.838h77.84v22.398a18.48,18.48,0,0,0,36.96,0V77.838h182v22.398a18.48,18.48,0,0,0,36.96,0V77.838h77.84c12.32,0,22.961,10.078,22.961,22.398l-.0039,75.602Z" />
-                                </svg> Reagendar <br>hora
+                                        <path fill="#000000" fill-opacity="0.38" d="M266.002,459.197c63.84,0,115.92-52.078,115.92-115.92,0-63.836-52.082-115.92-115.92-115.92s-115.92,52.078-115.92,115.92c0,63.84,52.082,115.92,115.92,115.92Zm0-202.16a86.24,86.24,0,1,1-86.238,86.242A86.27445,86.27445,0,0,1,266.002,257.037Z" />
+                                        <path fill="#000000" fill-opacity="0.38" d="M292.882,376.877a12.85276,12.85276,0,0,0,7.83982,2.23831,15.523,15.523,0,0,0,12.879-7.28119c3.9219-6.71881,1.67968-16.238-5.0391-20.16l-27.441-16.801v-35.84a14.559,14.559,0,1,0-29.118,0v44.238a13.91811,13.91811,0,0,0,7.28119,12.32Z" />
+                                        <path fill="#000000" fill-opacity="0.38" d="M472.08,40.878H394.24V18.48a18.48,18.48,0,0,0-36.96,0V40.878h-182V18.48a18.48,18.48,0,1,0-36.96,0V40.878H59.922A59.99,59.99,0,0,0,0,100.8V451.36a59.99,59.99,0,0,0,59.922,59.922h412.16a59.99,59.99,0,0,0,59.922-59.922l-.00391-351.12c0-32.48-26.879-59.359-59.922-59.359Zm22.961,409.92a22.58872,22.58872,0,0,1-22.961,22.398H59.92c-12.32,0-22.961-10.078-22.961-22.398V213.358h457.52v237.44Zm0-274.96H36.961V100.236A22.58871,22.58871,0,0,1,59.922,77.838h77.84v22.398a18.48,18.48,0,0,0,36.96,0V77.838h182v22.398a18.48,18.48,0,0,0,36.96,0V77.838h77.84c12.32,0,22.961,10.078,22.961,22.398l-.0039,75.602Z" />
+                                    </svg> Reagendar <br>hora
                             </a>
                         </li>
                         <li>
                             <a href="#" class="nav-bottom anular-ico">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 532.00403 511.28202">
-                                    <path fill="#000000" fill-opacity="0.38" d="M472.08,40.878H394.24V18.48a18.48,18.48,0,0,0-36.96,0V40.878h-182V18.48a18.48,18.48,0,1,0-36.96,0V40.878H59.922A59.99,59.99,0,0,0,0,100.8V451.36a59.99,59.99,0,0,0,59.922,59.922h412.16a59.99,59.99,0,0,0,59.922-59.922l-.00391-351.12c0-32.48-26.879-59.359-59.922-59.359Zm22.961,409.92a22.58872,22.58872,0,0,1-22.961,22.398H59.92c-12.32,0-22.961-10.078-22.961-22.398V213.358h457.52v237.44Zm0-274.96H36.961V100.236A22.58871,22.58871,0,0,1,59.922,77.838h77.84v22.398a18.48,18.48,0,0,0,36.96,0V77.838h182v22.398a18.48,18.48,0,0,0,36.96,0V77.838h77.84c12.32,0,22.961,10.078,22.961,22.398l-.0039,75.602Z" fill="#9b9b9a"/>
-                                    <path fill="#000000" fill-opacity="0.38" d="M196.56,413.278a19.29391,19.29391,0,0,0,12.879,5.60159,17.006,17.006,0,0,0,12.879-5.60159l43.121-43.121,43.121,43.121a19.29391,19.29391,0,0,0,12.879,5.60159,17.006,17.006,0,0,0,12.879-5.60159,18.58735,18.58735,0,0,0,0-26.32l-43.121-43.121,43.121-43.121a18.61105,18.61105,0,0,0-26.32-26.32l-41.996,42.562-43.121-43.121a18.61106,18.61106,0,0,0-26.32,26.32l43.121,43.121-43.121,43.121c-7.27731,7.83591-7.27731,19.598,0,26.879Z" fill="#9b9b9a"/>
-                                </svg> Anular
+                                        <path fill="#000000" fill-opacity="0.38" d="M472.08,40.878H394.24V18.48a18.48,18.48,0,0,0-36.96,0V40.878h-182V18.48a18.48,18.48,0,1,0-36.96,0V40.878H59.922A59.99,59.99,0,0,0,0,100.8V451.36a59.99,59.99,0,0,0,59.922,59.922h412.16a59.99,59.99,0,0,0,59.922-59.922l-.00391-351.12c0-32.48-26.879-59.359-59.922-59.359Zm22.961,409.92a22.58872,22.58872,0,0,1-22.961,22.398H59.92c-12.32,0-22.961-10.078-22.961-22.398V213.358h457.52v237.44Zm0-274.96H36.961V100.236A22.58871,22.58871,0,0,1,59.922,77.838h77.84v22.398a18.48,18.48,0,0,0,36.96,0V77.838h182v22.398a18.48,18.48,0,0,0,36.96,0V77.838h77.84c12.32,0,22.961,10.078,22.961,22.398l-.0039,75.602Z" fill="#9b9b9a"/>
+                                        <path fill="#000000" fill-opacity="0.38" d="M196.56,413.278a19.29391,19.29391,0,0,0,12.879,5.60159,17.006,17.006,0,0,0,12.879-5.60159l43.121-43.121,43.121,43.121a19.29391,19.29391,0,0,0,12.879,5.60159,17.006,17.006,0,0,0,12.879-5.60159,18.58735,18.58735,0,0,0,0-26.32l-43.121-43.121,43.121-43.121a18.61105,18.61105,0,0,0-26.32-26.32l-41.996,42.562-43.121-43.121a18.61106,18.61106,0,0,0-26.32,26.32l43.121,43.121-43.121,43.121c-7.27731,7.83591-7.27731,19.598,0,26.879Z" fill="#9b9b9a"/>
+                                    </svg> Anular
                                 <br>hora
                             </a>
                         </li>
