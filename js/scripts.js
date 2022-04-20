@@ -2,7 +2,10 @@ var cont = document.getElementById("asd");
 
 function changeSizeByBtn(size) {
     // Set value of the parameter as fontSize
-    cont.style.fontSize = size + "%"; // <- HERE
+    act = parseFloat(window.getComputedStyle(cont, null).getPropertyValue('font-size'));
+    if (act < 14 && act > 9) {
+        cont.style.fontSize = size * act + "px";
+    } // <- HERE
 };
 
 
@@ -119,10 +122,11 @@ $(function() {
             $('#reservar-nav > a').css("font-weight", "600");
             $('#reservar-nav > a').css("font-size", "1.2rem");
             $('#reservar-nav > a > svg > path').css("fill", "#028080");
-            $('#reservar-nav > a > svg > path').css('fill-opacity', '1');
+            $('#reservar-nav > a > svg > path').css("fill-opacity", "1");
             $("#reservar-nav").css("border-top", "#028080 solid 0.2rem");
             $("#reservar-nav-top").css("font-weight", 700);
-            $("#reservar-nav-top").css("border-bottom", "#009999 solid 0.3rem");
+            $("#reservar-nav-top").css("border-bottom", "#009999 solid 3px");
+            $("#reservar-nav-top").css("border-radius", "5px");
             $("#reservar-nav-top").css("color", "#009999");
             break;
     };
