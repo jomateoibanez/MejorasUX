@@ -171,4 +171,11 @@ $(function() {
             $("#p5").addClass("paso-off");
             break
     };
+
+    async function test() {
+        const response = await fetch("https://proxy.megasalud.cl/AWAPatients/MainAreas/GetPublicData(shortId=null)?$orderby=Position");
+        const data = await response.json();
+        console.log(data.value);
+    }
+    test();
 });
