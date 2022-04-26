@@ -3,15 +3,15 @@
 <html lang="es" id="asd">
 
 <head>
-    <title>Paso 2/5: Selección Área</title>
+    <title>Paso 2/5 - Selección Área</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
     </style>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/petite-vue" defer init></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/jquery.rut.js"></script>
     <link rel="shortcut icon" href="#">
-
 </head>
 
 <body>
@@ -22,16 +22,28 @@
                 <a href="https://www.redsalud.cl/" target="_blank"><img src="logo.png" class="logo-header"></a>
                 <ul class="navlinks">
                     <li><a id="reservar-nav-top" href="#">Reservar hora</a></li>
+                    <div class="columna" style="width: 5px;"></div>
                     <li><a href="#">Consultar hora</a></li>
+                    <div class="columna" style="width: 5px;"></div>
                     <li><a href="#">Confirmar hora</a></li>
-                    <li><a href="#">Reprogramar hora</a></li>
+                    <div class="columna" style="width: 5px;"></div>
                     <li><a href="#">Anular hora</a></li>
+                    <div class="columna" style="width: 5px;"></div>
+                    <div class="columna"></div>
                 </ul>
-                <svg class="hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 336.004 336.00201">
-                    <path d="M336.002,168.001a16.80039,16.80039,0,0,1-16.801,16.801H16.801a16.801,16.801,0,0,1,0-33.602h302.4A16.80041,16.80041,0,0,1,336.002,168.001Z" fill="#099"/>
-                    <path d="M336.002,319.201a16.79536,16.79536,0,0,1-16.801,16.801H16.801a16.801,16.801,0,0,1,0-33.602h302.4A16.79541,16.79541,0,0,1,336.002,319.201Z" fill="#099"/>
-                    <path d="M.002,16.801A16.80041,16.80041,0,0,1,16.803,0h302.4a16.801,16.801,0,1,1,0,33.602H16.803A16.80041,16.80041,0,0,1,.002,16.801Z" fill="#099"/>
-                </svg>
+                <div style="display: flex; flex-direction: column; height: 100%; justify-content: center;">
+                    <div class="separacion">
+                        <div style="display: flex; align-items: center; flex-direction: column; justify-content: space-around;">
+                            <button class="btn-font grande" type="button" onclick="changeSizeByBtn(1.1)">A<sup style="align-self: flex-start;">+</sup></button>
+                        </div>
+                        <div style="display: flex; align-items: center; flex-direction: column; justify-content: space-around;">
+                            <button class="btn-font" type="button" onclick="cont.style.fontSize = 62.5 + '%';">A</button>
+                        </div>
+                        <div style="display: flex; align-items: center; flex-direction: column; justify-content: space-around;">
+                            <button class="btn-font chica" type="button" onclick="changeSizeByBtn(0.9)">A<span style="padding-bottom: 1rem; font-weight: 600;">-</span></button>
+                        </div>
+                    </div>
+                </div>
             </nav>
             <div class="columna"></div>
         </header>
@@ -39,26 +51,11 @@
         <div class="main">
             <div></div>
             <div class="ct-form">
-                <div class="separacion">
-                    <div>
-                        <h1>Paso 2: Seleccione Área</h1>
-                        <h2>Presione un área para continuar</h2>
-                    </div>
-                    <div class="separacion">
-                        <div style="display: flex; align-items: center; flex-direction: column; justify-content:flex-end; padding-bottom: 2rem;">
-                            <button class="btn-font-grande" type="button" onclick="changeSizeByBtn(1.1)">A<sup>+</sup></button>
-                            <p style="color: #747473; font-weight: 400;">Grande</p>
-                        </div>
-                        <div style="display: flex; align-items: center; flex-direction: column; justify-content:flex-end; padding-bottom: 2rem;">
-                            <button class="btn-font" type="button" onclick="cont.style.fontSize = 62.5 + '%'">A</button>
-                            <p style="color: #01635e; font-weight: 700;">Regular</p>
-                        </div>
-                        <div style="display: flex; align-items: center; flex-direction: column; justify-content:flex-end; padding-bottom: 2rem;">
-                            <button class="btn-font-chica" type="button" onclick="changeSizeByBtn(50.5)">A<sup>-</sup></button>
-                            <p>Pequeña</p>
-                        </div>
-                    </div>
+                <div>
+                    <h1>Paso 2: Seleccione Área</h1>
+                    <h2>Presione un área para continuar</h2>
                 </div>
+
                 <div class="progreso" id="progreso"></div>
                 <div class="pelotas-pasos">
                     <div id="p1" class="paso"></div>
