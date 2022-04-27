@@ -205,6 +205,7 @@ footer {
 }
 
 .ct-form {
+    width: 100%;
     padding: 1.4rem 3% 0 3%;
     background-color: #f2f2f2;
     display: flex;
@@ -278,6 +279,15 @@ p {
 
 a:hover {
     text-decoration: underline;
+    color: #009999;
+}
+
+.surveyform-btn div a:hover {
+    text-decoration: underline!important;
+}
+
+.surveyform-btn a {
+    text-decoration: none;
     color: #009999;
 }
 
@@ -526,10 +536,10 @@ input[type="radio"] {
 
 .ct-servicios {
     display: grid;
-    grid-template-rows: repeat(auto-fill, 13rem);
-    column-gap: 0.8rem;
-    row-gap: 0.8rem;
-    grid-template-columns: repeat(auto-fill, 13rem);
+    grid-template-rows: repeat(auto-fill, 130px);
+    column-gap: 8px;
+    row-gap: 8px;
+    grid-template-columns: repeat(auto-fill, 130px);
     justify-content: center;
 }
 
@@ -541,12 +551,12 @@ input[type="radio"] {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    height: 13rem;
-    width: 13rem;
+    height: 130px;
+    width: 130px;
     border-radius: 5px;
     background-color: #009999;
     justify-content: center;
-    padding-top: 2rem;
+    padding-top: 15px;
 }
 
 .bx-servicio:nth-child(2n+0) {
@@ -582,9 +592,9 @@ input[type="radio"] {
 }
 
 .bx-servicio img {
-    height: 5rem;
-    width: 5rem;
-    margin-bottom: 1.5rem;
+    height: 45px;
+    width: 45px;
+    margin-bottom: 10px;
 }
 
 .btn-siguiente:focus {
