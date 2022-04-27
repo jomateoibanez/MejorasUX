@@ -3,7 +3,7 @@ var cont = document.getElementById("asd");
 function changeSizeByBtn(size) {
     // Set value of the parameter as fontSize
     act = parseFloat(window.getComputedStyle(cont, null).getPropertyValue('font-size'));
-    if (act < 14 && act > 9) {
+    if (act < 13 && act > 9) {
         cont.style.fontSize = size * act + "px";
     } // <- HERE
 };
