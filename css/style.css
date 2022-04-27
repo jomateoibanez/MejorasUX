@@ -456,8 +456,8 @@ button:disabled {
     background: #fff;
     border-radius: 50%;
     position: relative;
-    margin-right: 1.5em;
-    margin-left: 2em;
+    margin-right: 15px;
+    margin-left: 20px;
 }
 
 .ct-input-radio .option .dot::before {
