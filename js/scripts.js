@@ -17,7 +17,7 @@ $(function() {
 
     $("input[id='CDI']").click(function() {
         var cdichecked = $("input[id='CDI']:checked").val();
-        if (cdichecked == "cdi") {
+        if (cdichecked == "NationalId") {
             $('#tipoId').html('RUT del Paciente');
             $('#hlp-input').html('Ingrese RUT del paciente.');
             $('#rut').prop("placeholder", "Ej: 8.765.432-1");
@@ -44,19 +44,19 @@ $(function() {
             });
 
         } else {
-            $('#tipoId').html('Indique número de pasaporte del paciente. Solo para <strong>extranjeros <u>sin</u> Cédula</strong>.');
+            $('#tipoId').html('Indique número de pasaporte del paciente.<br>(Solo para <strong>extranjeros <u>sin</u> Cédula</strong>.)');
         };
     });
 
     /* Esto cambia el label del Paso 1 en función del radio button escogido */
     $("input[id='PASAPORTE']").click(function() {
         var psptchecked = $("input[id='PASAPORTE']:checked").val();
-        if (psptchecked == "pspt") {
+        if (psptchecked == "Passport") {
             $('#tipoId').html('Número de Pasaporte');
             $('#rut').css("border-color", "#dfdfdf");
             $('#rut').prop("value", "");
             $('#rut').prop("placeholder", "Ej: 1234567890");
-            $('#hlp-input').html('Indique número de pasaporte del paciente. Solo para <strong>extranjeros <u>sin</u> Cédula de Identidad</strong>.');
+            $('#hlp-input').html('Indique número de pasaporte del paciente.<br>(Solo para <strong>extranjeros <u>sin</u> Cédula de Identidad</strong>.)');
             $('#hlp-input').css("color", "#747473");
         } else {
             $('#tipoId').html('Rut del Paciente');
@@ -171,6 +171,11 @@ $(function() {
             $("#p5").addClass("paso-off");
             break
     };
+
+
+    /// TEST ASYNC
+
+
 
     async function test() {
         const response = await fetch("https://proxy.megasalud.cl/AWAPatients/MainAreas/GetPublicData(shortId=null)?$orderby=Position");
