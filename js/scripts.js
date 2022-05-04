@@ -203,11 +203,11 @@ $(function() {
                 patientid = data.PatientId;
                 console.log(data);
                 if (patientid == null) {
-                    window.open("/registro.html", "_self");
+                    window.open("registro.html", "_self");
                 } else if (patientid == undefined) {
                     console.log("Intente nuevamente");
                 } else if (patientid !== null && patientid !== undefined) {
-                    window.open("/paso2.html", "_self");
+                    window.open("paso2.html", "_self");
                 };
             });
         }
