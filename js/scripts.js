@@ -1,12 +1,18 @@
 var cont = document.getElementById("asd");
 
+cont.style.fontSize = test;
+
 function changeSizeByBtn(size) {
     // Set value of the parameter as fontSize
     act = parseFloat(window.getComputedStyle(cont, null).getPropertyValue('font-size'));
     if (act < 13 && act > 9) {
         cont.style.fontSize = size * act + "px";
-    } // <- HERE
+        let test = size * act + "px";
+        sessionStorage.setItem("font", test);
+    } //
 };
+
+
 
 
 $(function() {
@@ -44,7 +50,7 @@ $(function() {
             });
 
         } else {
-            $('#tipoId').html('Indique número de pasaporte del paciente.<br>(Solo para <strong>extranjeros <u>sin</u> Cédula</strong>.)');
+            $('#tipoId').html('Indique número de pasaporte del paciente. (Solo para <strong>extranjeros <u>sin</u> Cédula</strong>.)');
         };
     });
 

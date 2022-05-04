@@ -506,6 +506,15 @@ input[type="radio"] {
     font-weight: 800;
 }
 
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #01635E;
+    padding-bottom: 4px;
+}
+
 .ct-input {
     display: flex;
     flex-wrap: wrap;
