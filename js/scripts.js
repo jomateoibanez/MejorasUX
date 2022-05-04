@@ -179,38 +179,35 @@ $(function() {
             break
     };
 
-
-    /// TEST ASYNC
-
-
-
-
-    async function validar() {
-        if (document.getElementById("continuar").disabled) {} else {
-            const DocumentValue = document.getElementById("rut").value.replace(/[\.-]/g, "");
-            DocumentType = document.querySelector('input[name="select"]:checked').value;
-            body = '{"DocumentValue": "' + DocumentValue + '","DocumentType" :"' + DocumentType + '","DocumentCountry": "CL"}';
-            const response = await fetch("https://proxy.megasalud.cl/AWAPatients/Patients/VerifyPatient", {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: body
-            });
-
-            return response.json().then(data => {
-                patientid = data.PatientId;
-                console.log(data);
-                if (patientid == null) {
-                    window.open("registro.html", "_self");
-                } else if (patientid == undefined) {
-                    console.log("Intente nuevamente");
-                } else if (patientid !== null && patientid !== undefined) {
-                    window.open("paso2.html", "_self");
-                };
-            });
-        }
-    };
-
 });
+
+
+async function validar() {
+    if (document.getElementById("continuar").disabled) {} else {
+        const DocumentValue = document.getElementById("rut").value.replace(/[\.-]/g, "");
+        DocumentType = document.querySelector('input[name="select"]:checked').value;
+        body = '{"DocumentValue": "' + DocumentValue + '","DocumentType" :"' + DocumentType + '","DocumentCountry": "CL"}';
+        const response = await fetch("https://proxy.megasalud.cl/AWAPatients/Patients/VerifyPatient", {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json;charset=UTF-8'
+            },
+            body: body
+        });
+
+        console.log("hola 1");
+
+        return response.json().then(data => {
+            patientid = data.PatientId;
+            console.log(data);
+            if (patientid == null) {
+                window.open("registro.html", "_self");
+            } else if (patientid == undefined) {
+                console.log("Intente nuevamente");
+            } else if (patientid !== null && patientid !== undefined) {
+                window.open("paso2.html", "_self");
+            };
+        });
+    }
+};

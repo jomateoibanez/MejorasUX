@@ -65,41 +65,41 @@
                     <div id="p4" class="paso"></div>
                     <div id="p5" class="paso"></div>
                 </div>
-                <form>
-                    <!-- borrar para sacar de github -->
-                    <div class="surveyform">
-                        <h3>¿Para quién es la hora?</h3>
-                        <p>Completa los datos del <u><strong>Paciente</strong> que será atendido:</u></p>
-                        <div class="ct-input-radio">
-                            <label id="docType" class="input-label required primer-il">Documento de Identificación</label>
-                            <input type="radio" value="NationalId" name="select" id="CDI" checked>
-                            <input type="radio" value="Passport" name="select" id="PASAPORTE">
 
-                            <label for="CDI" class="option option-1">
+                <!-- borrar para sacar de github -->
+                <div class="surveyform">
+                    <h3>¿Para quién es la hora?</h3>
+                    <p>Completa los datos del <u><strong>Paciente</strong> que será atendido:</u></p>
+                    <div class="ct-input-radio">
+                        <label id="docType" class="input-label required primer-il">Documento de Identificación</label>
+                        <input type="radio" value="NationalId" name="select" id="CDI" checked>
+                        <input type="radio" value="Passport" name="select" id="PASAPORTE">
+
+                        <label for="CDI" class="option option-1">
                                     <div class="dot"></div>
                                     <span>Cédula de identidad</span>
                                 </label>
 
-                            <label for="PASAPORTE" class="option option-2">
+                        <label for="PASAPORTE" class="option option-2">
                                     <div class="dot"></div>
                                     <span class="text">Pasaporte</span>
                                 </label>
 
-                        </div>
-                        <div class="ct-input">
-                            <label class="input-label required" required id="tipoId">RUT del Paciente</label>
-                            <input id="rut" type="text" maxlength="12" placeholder="Ej: 8.765.432-1" onkeyup="this.value=this.value.replace(/[^-kK.0-9]/g, '')">
-                            <p id="hlp-input" class="input-helper">Ingrese RUT del paciente.</p>
-                        </div>
                     </div>
-                    <div class="surveyform-btn">
-                        <button class="btn-siguiente" type="submit" id="continuar" disabled onclick="validar()">
+                    <div class="ct-input">
+                        <label class="input-label required" required id="tipoId">RUT del Paciente</label>
+                        <input id="rut" type="text" maxlength="12" placeholder="Ej: 8.765.432-1" onkeyup="this.value=this.value.replace(/[^-kK.0-9]/g, '')">
+                        <p id="hlp-input" class="input-helper">Ingrese RUT del paciente.</p>
+                    </div>
+                </div>
+                <div class="surveyform-btn">
+                    <button class="btn-siguiente" type="submit" id="continuar" disabled onclick="validar()">
                                 <div class="tool" id="test"">
                                     <span>CONTINUAR</span>
                                 </div>
                         </button>
-                    </div>
-                </form>
+                </div>
+
             </div>
             <div></div>
         </div>
