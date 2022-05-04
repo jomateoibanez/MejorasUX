@@ -15,44 +15,6 @@ function changeSizeByBtn(size) {
     } //
 };
 
-function validar() {
-    if (document.getElementById("continuar").disabled) {
-
-    } else {
-        // NÚMERO DOCUMENTO
-        const DocumentValue = document.getElementById("rut").value.replace(/[\.-]/g, "");
-        // TIPO DOCUMENTO
-        DocumentType = document.querySelector('input[name="select"]:checked').value;
-
-        // ODY DEL JSON PARA REALIZAR EL FETCH
-        body = '{"DocumentValue": "' + DocumentValue + '","DocumentType" :"' + DocumentType + '","DocumentCountry": "CL"}'
-
-
-        // VERIFICACIÓN
-        const response = fetch("https://proxy.megasalud.cl/AWAPatients/Patients/VerifyPatient", {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            'body': body
-        });
-
-        response.json().then(data => {
-            patientid = data.PatientId;
-            console.log(data);
-            if (patientid == null) {
-                window.open("/registro.html", "_self");
-            } else if (patientid == undefined) {
-                console.log("Intente nuevamente");
-            } else if (patientid !== null && patientid !== undefined) {
-                window.open("/paso2.html", "_self");
-            };
-        });
-
-    };
-};
-
 
 $(function() {
 
@@ -222,10 +184,33 @@ $(function() {
 
 
 
-    async function test() {
-        const response = await fetch("https://proxy.megasalud.cl/AWAPatients/MainAreas/GetPublicData(shortId=null)?$orderby=Position");
-        const data = await response.json();
-        console.log(data.value);
-    }
-    test();
+
+    async function validar() {
+        if (document.getElementById("continuar").disabled) {} else {
+            const DocumentValue = document.getElementById("rut").value.replace(/[\.-]/g, "");
+            DocumentType = document.querySelector('input[name="select"]:checked').value;
+            body = '{"DocumentValue": "' + DocumentValue + '","DocumentType" :"' + DocumentType + '","DocumentCountry": "CL"}';
+            const response = await fetch("https://proxy.megasalud.cl/AWAPatients/Patients/VerifyPatient", {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: body
+            });
+
+            return response.json().then(data => {
+                patientid = data.PatientId;
+                console.log(data);
+                if (patientid == null) {
+                    window.open("MEJORASUX/registro.html", "_self");
+                } else if (patientid == undefined) {
+                    console.log("Intente nuevamente");
+                } else if (patientid !== null && patientid !== undefined) {
+                    window.open("MEJORASUX/paso2.html", "_self");
+                };
+            });
+        }
+    };
+
 });
