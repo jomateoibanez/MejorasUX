@@ -1,5 +1,6 @@
 var cont = document.getElementById("asd");
 
+localStorage.getItem("font");
 cont.style.fontSize = test;
 
 function changeSizeByBtn(size) {
