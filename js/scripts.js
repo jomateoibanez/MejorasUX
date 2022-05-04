@@ -15,6 +15,43 @@ function changeSizeByBtn(size) {
     } //
 };
 
+function validar() {
+    if (document.getElementById("continuar").disabled) {
+
+    } else {
+        // NÚMERO DOCUMENTO
+        const DocumentValue = document.getElementById("rut").value.replace(/[\.-]/g, "");
+        // TIPO DOCUMENTO
+        DocumentType = document.querySelector('input[name="select"]:checked').value;
+
+        // ODY DEL JSON PARA REALIZAR EL FETCH
+        body = '{"DocumentValue": "' + DocumentValue + '","DocumentType" :"' + DocumentType + '","DocumentCountry": "CL"}'
+
+
+        // VERIFICACIÓN
+        const response = await fetch("https://proxy.megasalud.cl/AWAPatients/Patients/VerifyPatient", {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            'body': body
+        });
+
+        response.json().then(data => {
+            patientid = data.PatientId;
+            console.log(data);
+            if (patientid == null) {
+                window.open("/registro.html", "_self");
+            } else if (patientid == undefined) {
+                console.log("Intente nuevamente");
+            } else if (patientid !== null && patientid !== undefined) {
+                window.open("/paso2.html", "_self");
+            };
+        });
+
+    };
+};
 
 
 $(function() {
