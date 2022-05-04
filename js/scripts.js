@@ -29,7 +29,7 @@ function validar() {
 
 
         // VERIFICACIÓN
-        const response = await fetch("https://proxy.megasalud.cl/AWAPatients/Patients/VerifyPatient", {
+        const response = fetch("https://proxy.megasalud.cl/AWAPatients/Patients/VerifyPatient", {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
