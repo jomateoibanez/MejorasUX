@@ -1,7 +1,9 @@
 var cont = document.getElementById("asd");
 
-localStorage.getItem("font");
-cont.style.fontSize = test;
+if (sessionStorage.font !== null) {
+    nuevo = sessionStorage.font;
+    cont.style.fontSize = nuevo;
+}
 
 function changeSizeByBtn(size) {
     // Set value of the parameter as fontSize
@@ -9,10 +11,9 @@ function changeSizeByBtn(size) {
     if (act < 13 && act > 9) {
         cont.style.fontSize = size * act + "px";
         let test = size * act + "px";
-        sessionStorage.setItem("font", test);
+        sessionStorage.font = test;
     } //
 };
-
 
 
 
