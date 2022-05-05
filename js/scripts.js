@@ -1,11 +1,13 @@
 var cont = document.getElementById("asd");
 
 if (sessionStorage.font !== null) {
-    if (a == undefined) {
+    if (!a) {
         a = 62.5 + '%';
+        cont.style.fontSize = a;
+    } else {
+        cont.style.fontSize = a;
     }
-    cont.style.fontSize = a;
-}
+};
 
 function changeSizeByBtn(size) {
     // Set value of the parameter as fontSize
