@@ -1,19 +1,17 @@
 var cont = document.getElementById("asd");
 
 if (sessionStorage.font !== null) {
-    nuevo = sessionStorage.font;
-    cont.style.fontSize = nuevo;
+    cont.style.fontSize = a;
 }
 
 function changeSizeByBtn(size) {
     // Set value of the parameter as fontSize
     act = parseFloat(window.getComputedStyle(cont, null).getPropertyValue('font-size'));
     if (act < 13 && act > 9) {
-        storage.removeItem('font');
-        cont.style.fontSize = size * act + "px";
-        let test = size * act + "px";
-        sessionStorage.font = test;
-    } //
+        a = size * act + "px"
+        cont.style.fontSize = a;
+        sessionStorage.font = a;
+    }; //
 };
 
 
