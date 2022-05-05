@@ -1,6 +1,9 @@
 var cont = document.getElementById("asd");
 
 if (sessionStorage.font !== null) {
+    if (a == undefined) {
+        a = 62.5 + '%';
+    }
     cont.style.fontSize = a;
 }
 
@@ -8,7 +11,7 @@ function changeSizeByBtn(size) {
     // Set value of the parameter as fontSize
     act = parseFloat(window.getComputedStyle(cont, null).getPropertyValue('font-size'));
     if (act < 13 && act > 9) {
-        a = size * act + "px"
+        a = size * act + "px";
         cont.style.fontSize = a;
         sessionStorage.font = a;
     }; //
