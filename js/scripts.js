@@ -2,8 +2,8 @@ var cont = document.getElementById("asd");
 
 if (sessionStorage.font !== null) {
     if (typeof a === 'undefined') {
-        a = 62.5 + '%';
-        cont.style.fontSize = a;
+        b = 62.5 + '%';
+        cont.style.fontSize = b;
     } else {
         sessionStorage.name = a;
         cont.style.fontSize = a;
