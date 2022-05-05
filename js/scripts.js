@@ -9,6 +9,7 @@ function changeSizeByBtn(size) {
     // Set value of the parameter as fontSize
     act = parseFloat(window.getComputedStyle(cont, null).getPropertyValue('font-size'));
     if (act < 13 && act > 9) {
+        storage.removeItem('font');
         cont.style.fontSize = size * act + "px";
         let test = size * act + "px";
         sessionStorage.font = test;
