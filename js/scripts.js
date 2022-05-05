@@ -5,6 +5,7 @@ if (sessionStorage.font !== null) {
         a = 62.5 + '%';
         cont.style.fontSize = a;
     } else {
+        sessionStorage.name = a;
         cont.style.fontSize = a;
     }
 };
