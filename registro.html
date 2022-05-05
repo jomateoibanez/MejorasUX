@@ -65,16 +65,37 @@
                 </div>
                 <form>
                     <div class="surveyform">
-                        <h3>¿A quién atenderemos?</h3>
-                        <p>Completa con los datos <u><strong>de Identificación del Paciente</strong></u>:</p>
+                        <h3>¿Quién es el Paciente?</h3>
+                        <p>Completa con los datos <u><strong>de Identificación</strong></u> del Paciente:</p>
                         <div>
+                            <div class="registro">
+                                <div class="ct-input">
+                                    <label class="input-label required" required name="given-name" id="given-name">Primer Nombre</label>
+                                    <input name="given-name" id="given-name" autocomplete="given-name" type="text" placeholder="Ej: Alex">
+                                </div>
+                                <div class="ct-input ">
+                                    <label class="input-label required " required id="tipoId ">Segundo nombre</label>
+                                    <input id="rut " type="text " placeholder="Ej: Yeray">
+                                </div>
+                                <div class="ct-input ">
+                                    <label class="input-label required " required id="tipoId">Primer Apellido</label>
+                                    <input id="rut " type="text " placeholder="Ej: Ibáñez">
+                                </div>
+                                <div class="ct-input ">
+                                    <label class="input-label required " required id="tipoId">Segundo Apellido</label>
+                                    <input id="rut " type="text " placeholder="Ej: Cornejo">
+                                </div>
+
+                                <div class="ct-input ">
+                                    <label class="input-label required " required>Fecha de Nacimiento</label>
+                                    <input id="bday" type="date" placeholder="Ej: 01-08-1992" min="1912-01-01" onfocus="this.max=new Date().toISOString().split('T')[0]" autocomplete="bday">
+                                </div>
+                            </div>
                             <div class="ct-input-radio ">
                                 <label id="docType" class="input-label required">Género</label>
                                 <input type="radio" value="Masculinos" name="select" checked>
                                 <input type="radio" value="Femeninos" name="select">
-
                                 <div class="genero">
-
                                     <label class="option option-1">
                                         <div class="dot"></div>
                                         <span class="text">Femenino</span>
@@ -89,29 +110,7 @@
                                         <div class="dot"></div>
                                         <span style="letter-spacing: -1.5px!important;">Otro / No Binario</span>
                                     </label>
-
                                 </div>
-
-
-                            </div>
-                            <div class="registro">
-                                <div class="ct-input">
-                                    <label class="input-label required" required name="given-name" id="given-name">Primer Nombre</label>
-                                    <input name="given-name" id="given-name" autocomplete="given-name" type="text" placeholder="Ej: Juan">
-                                </div>
-                                <div class="ct-input ">
-                                    <label class="input-label required " required id="tipoId ">Segundo nombre</label>
-                                    <input id="rut " type="text " placeholder="Ej: Ignacio ">
-                                </div>
-                                <div class="ct-input ">
-                                    <label class="input-label required " required id="tipoId">Primer Apellido</label>
-                                    <input id="rut " type="text " placeholder="Ej: Gonzalez">
-                                </div>
-                                <div class="ct-input ">
-                                    <label class="input-label required " required id="tipoId">Segundo Apellido</label>
-                                    <input id="rut " type="text " placeholder="Ej: Gonzalez">
-                                </div>
-
                             </div>
                             <hr style="margin-top: 15px; height:1px;border-width:0;color:#d8d8d8;background-color:#d8d8d8">
 
