@@ -125,6 +125,7 @@ $(function() {
         case '/MejorasUX/paso3.html':
         case '/index.html':
         case '/registro.html':
+        case '/MejorasUX/registro.html':
         case '/index.html#':
         case '/paso2.html?select=cdi':
         case '/paso2.html?select=pspt':
@@ -150,6 +151,7 @@ $(function() {
         case '/index.html':
         case '/index.html#':
         case '/registro.html':
+        case '/MejorasUX/registro.html':
             $("#progreso").addClass("progreso");
             $("#p2").addClass("paso-off");
             $("#p3").addClass("paso-off");
