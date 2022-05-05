@@ -1,7 +1,7 @@
 var cont = document.getElementById("asd");
 
 if (sessionStorage.font !== null) {
-    if (!a) {
+    if (a == undefined) {
         a = 62.5 + '%';
         cont.style.fontSize = a;
     } else {
