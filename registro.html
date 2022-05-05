@@ -118,14 +118,15 @@
                             <hr style="margin-top: 15px; height:1px;border-width:0;color:#d8d8d8;background-color:#d8d8d8">
 
                             <div class="registro">
-                                <div class="ct-input ">
+                                <div class="ct-input">
                                     <label class="input-label required " required id="tipoId ">Correo Electrónico</label>
-                                    <input id="rut " type="text " placeholder="Ej: 981 362 469 ">
+                                    <input id="rut " type="text " placeholder="Ej: Alex@Redsalud.cl ">
                                 </div>
 
-                                <div class="ct-input ">
-                                    <label class="input-label required " required id="tipoId ">Número de Teléfono</label>
+                                <div class="ct-input">
+                                    <label class="input-label required" required id="tipoId ">Número de Teléfono</label>
                                     <input id="rut " type="text " placeholder="Ej: 981 362 469 ">
+                                    <p class="input-helper">Debe contener 9 digitos.</p>
                                 </div>
                             </div>
 
@@ -140,18 +141,19 @@
 
 
                             <div class="ct-input ">
-                                <label class="input-label required " required id="tipoId ">Captcha</label>
-                                <input id="rut " type="text " placeholder="Ej: juan.gonzalez@redsalud.cl " data-inputmask=" 'alias': 'rut' ">
+                                <label class="input-label required " required id="tipoId ">Presiona para verificar eres humano:</label>
                             </div>
                         </div>
                     </div>
                     <div class="surveyform-btn ">
-                        <button class="btn-siguiente " type="submit " id="continuar " disabled>
-                            <div class="tool " id="test " onmouseover="checkBtn() ">
+                        <button class="btn-siguiente" type="submit" id="continuar" disabled>
+                            <div class="tool " id="test">
                                 <span>CONTINUAR</span>
                             </div>
                         </button>
-                        <a href="/MejorasUX/ ">&lt; VOLVER AL PASO 1</a>
+                        <div>
+                            <a href="/MejorasUX/ ">&lt; VOLVER AL PASO 1</a>
+                        </div>
                     </div>
                 </form>
             </div>

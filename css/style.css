@@ -354,7 +354,8 @@ li a {
     font-weight: 500;
 }
 
-.ct-input-radio {
+.ct-input-radio,
+.genero {
     background: #fff;
     display: flex;
     flex-wrap: wrap;
