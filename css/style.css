@@ -522,6 +522,23 @@ input[type="radio"] {
     flex-direction: column;
 }
 
+select,
+select option {
+    color: #000000;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #999999!important;
+}
+
+
+/*Added for browser compatibility*/
+
+[hidden] {
+    display: none;
+}
+
 .ct-input input,
 .ct-input select {
     border: 1px solid #dfdfdf;
@@ -529,7 +546,7 @@ input[type="radio"] {
     font-size: 1.6rem !important;
     background-color: white;
     padding: 0.5rem 0rem 0.5rem 0.3rem;
-    color: black !important;
+    color: black;
     width: 100%;
     font-family: 'Open Sans', sans-serif !important;
 }
