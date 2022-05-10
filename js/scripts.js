@@ -190,6 +190,7 @@ $(function() {
 
 async function validar() {
     if (document.getElementById("continuar").disabled) {} else {
+        sessionStorage.rut = document.getElementById("rut").value;
         const DocumentValue = document.getElementById("rut").value.replace(/[\.-]/g, "");
         DocumentType = document.querySelector('input[name="select"]:checked').value;
         body = '{"DocumentValue": "' + DocumentValue + '","DocumentType" :"' + DocumentType + '","DocumentCountry": "CL"}';
