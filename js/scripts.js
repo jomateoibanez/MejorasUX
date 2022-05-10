@@ -188,7 +188,6 @@ $(function() {
 
 });
 
-
 async function validar() {
     if (document.getElementById("continuar").disabled) {} else {
         const DocumentValue = document.getElementById("rut").value.replace(/[\.-]/g, "");
@@ -203,8 +202,6 @@ async function validar() {
             body: body
         });
 
-        console.log("hola 1");
-
         return response.json().then(data => {
             patientid = data.PatientId;
             console.log(data);
@@ -218,3 +215,65 @@ async function validar() {
         });
     }
 };
+
+
+
+async function prueba() {
+    const response = await fetch("https://proxy.megasalud.cl/AWAPatients/search/coverageplan(searchPhrase=@searchPhrase,excludePrivatePlans=@ePP,excludeSystemManagedPlans=@eSMP,resourceId=@resourceId,serviceId=@serviceId,areaId=@areaId,patientId=@patientId,includeChannel=@iC,onlyMainPlans=@onlyMP)?@searchPhrase=%27%27&@ePP=true&@eSMP=true&@resourceId=null&@serviceId=null&@areaId=null&@patientId=null&@iC=true&@onlyMP=false&$top=100")
+    let data = await response.json()
+    obtenerListadoAseguradores(data.value)
+
+}
+
+
+
+
+function obtenerListadoAseguradores(listaAseguradores) {
+    listaAseguradores.sort(function(a, b) {
+        return a.CoverageCompanyName.localeCompare(b.CoverageCompanyName);
+    });
+
+    document.getElementById("planes").innerHTML =
+        `<select required>
+        <option value="" selected disabled>Seleccione su Previsión</option>
+        ${
+        listaAseguradores.map(function (asegurador) {
+           if (asegurador.Plans.length > 1) {
+            return `
+                <optgroup style="color: #FFFFFF; background-color: #01635e" label="${asegurador.CoverageCompanyName}"
+                ${Object(asegurador.Plans).map(function (plan) {
+                    const test = (plan.Name).toLowerCase()
+                    const arr = test.split(" ");
+                    //loop through each element of the array and capitalize the first letter.
+                    for (var i = 0; i < arr.length; i++) {
+                        arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+                    }
+                    //Join all the elements of the array back into a string 
+                    //using a blankspace as a separator 
+                    const test2 = arr.join(" ");
+                    return `<option style="background-color: #ffffff; font-style: italic;">${test2}`;
+                }).join('')}</optgroup></option>
+                `
+            } else {
+                return `
+                ${Object(asegurador.Plans).map(function (plan) {
+                    const test = (plan.Name).toLowerCase()
+                    const arr = test.split(" ");
+                    for (var i = 0; i < arr.length; i++) {
+                        arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+                    }
+                    //Join all the elements of the array back into a string 
+                    //using a blankspace as a separator 
+                    const test2 = arr.join(" ");
+                    return `<option style="background-color: #FFFFFF; font-weight: 500; ">${test2}`;
+                }).join('')}</option>
+                `
+                
+
+            }
+            })  
+        }
+    </select>`
+}
+
+prueba()
