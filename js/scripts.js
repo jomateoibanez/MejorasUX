@@ -1,3 +1,16 @@
+var lastScrollTop;
+navbar = document.getElementById('navbar');
+window.addEventListener('scroll', function() {
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+        navbar.style.top = '-80px';
+    } else {
+        navbar.style.top = '0';
+    }
+    lastScrollTop = scrollTop;
+});
+
+
 var cont = document.getElementById("asd");
 
 if (sessionStorage.font !== null) {
@@ -42,14 +55,14 @@ $(function() {
 
             // muestra un mensaje de error cuando el rut es inválido
             $("input#rut").rut().on('rutInvalido', function(e) {
-                $('#hlp-input').html("El rut " + $(this).val() + " es inválido");
+                $('#hlp-input').html("El RUT " + $(this).val() + " no es un rut válido");
                 $('#rut').css("border-color", "#b92E25");
                 $('#hlp-input').css("color", "#b92E25");
                 document.getElementById("continuar").disabled = true;
             });
             // muestra un mensaje de error cuando el rut es valido
             $("#rut").rut().on('rutValido', function(e, rut, dv) {
-                $('#hlp-input').html("Rut valido");
+                $('#hlp-input').html("Presione <strong>el botón</strong> para avanzar.");
                 document.getElementById("continuar").disabled = false;
                 $('#hlp-input').css("color", "#028080");
                 $('#rut').css("border-color", "#009999");
@@ -277,4 +290,23 @@ function obtenerListadoAseguradores(listaAseguradores) {
     </select>`
 }
 
+
 prueba()
+
+async function lol() {
+    const response = await fetch("https://proxy.megasalud.cl/AWAPatients/SubAreas?$select=Id,Name,Priority&$filter=((AreaId%20eq%20fc39a51c-7f0c-4bf4-bb7f-a7dc0055b8d1))")
+    let data = await response.json()
+    obtenerListadoSubAreas(data.value)
+}
+
+/* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("footer-bg")[0].style.top = "0";
+  } else {
+    document.getElementById("footer-bg")[0].style.top = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+}

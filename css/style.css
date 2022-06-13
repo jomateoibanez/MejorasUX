@@ -24,8 +24,8 @@ body {
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-areas: "header" "main" "footer";
-    grid-template-rows: 6.5rem 1fr 8rem;
+    grid-template-areas: "header" "main";
+    grid-template-rows: 6.5rem 1fr;
 }
 
 .separacion {
@@ -72,8 +72,8 @@ body {
 .btn-font.chica:hover,
 .btn-font:hover,
 .btn-font.grande:hover {
-    color: hsla(180, 97%, 25%, 0.38);
-    background-color: rgba(117, 194, 166, 9%);
+    color: #027e7e61;
+    background-color: #75c2a617;
     border-color: #75C2A6;
     cursor: pointer;
 }
@@ -131,7 +131,6 @@ nav ul {
 }
 
 footer {
-    grid-area: footer;
     background-color: white;
     border-radius: 1rem 1rem 0 0;
     height: 100%;
@@ -146,7 +145,15 @@ footer {
 }
 
 .footer-bg {
+    width: 100%;
     background-color: #F2F2F2;
+}
+
+#nav-btm {
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
 }
 
 .nav-btm-ct {
@@ -154,7 +161,7 @@ footer {
     width: 100%;
     line-height: 1.2;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     column-gap: 3%;
     justify-items: center;
     align-items: center;
@@ -204,6 +211,8 @@ footer {
 }
 
 .ct-form {
+    min-width: 300px;
+    min-height: 650px;
     width: 100%;
     padding: 1.4rem 3% 0 3%;
     background-color: #f2f2f2;
@@ -776,7 +785,6 @@ select option[value=""] {
         border-top: 0.3em solid #9BCD06;
         background-color: #009999;
         border-radius: 0;
-        grid-area: footer;
         grid-template-rows: 1fr;
     }
     ul span {
@@ -785,6 +793,9 @@ select option[value=""] {
         font-weight: 700;
         font-style: italic;
         text-decoration: underline;
+    }
+    .footer-bg {
+        bottom: auto;
     }
     .footer-desktop {
         display: flex;

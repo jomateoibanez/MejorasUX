@@ -23,7 +23,7 @@
 (function($) {
     var defaults = {
         validateOn: 'keyup',
-        formatOn: 'keyup',
+        formatOn: 'keyup change',
         ignoreControlKeys: true,
         useThousandsSeparator: true,
         minimumLength: 7
